@@ -7,6 +7,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var createFlow: CreateFlowCoordinator!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        BuddyBuildSDK.setup()
+        
 
         let token = ProcessInfo.processInfo.environment["ASANA_TOKEN"].flatMap(Token.init)!
         
