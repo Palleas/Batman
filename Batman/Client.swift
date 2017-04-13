@@ -1,23 +1,9 @@
 import Foundation
 import ReactiveSwift
+import Unbox
+import Result
 
-struct Token {
-    let value: String
-}
-
-protocol Mappable {
-    static func map(from payload: Any) -> Self
-}
-
-struct Project: Mappable {
-    let name: String
-    
-    static func map(from payload: Any) {
-        return
-    }
-}
-
-final class Batman {
+final class Client {
     private static let gateway = URL(string: "https://app.asana.com/api/1.0")!
     
     enum Endpoint {
@@ -25,7 +11,8 @@ final class Batman {
     }
     
     enum ClientError: Error {
-        
+        case requestError
+        case decodingError
     }
     
     private let session: URLSession
@@ -37,14 +24,46 @@ final class Batman {
     }
     
     func projects() -> SignalProducer<[Project], ClientError> {
-//        return session.
+        return get(.projects)
     }
     
-    func get<T: Mappable>(_ endpoint: Endpoint) -> SignalProducer<T, ClientError> {
-        return .empty
+    func get<T: Unboxable>(_ endpoint: Endpoint) -> SignalProducer<T, ClientError> {
+        let url = Client.gateway.appendingPathComponent(endpoint.path)
+        var comps = URLComponents(url: url, resolvingAgainstBaseURL: true)!
+        comps.queryItems = [URLQueryItem(name: "opt_fields", value: endpoint.fields.joined(separator: ","))]
+        
+        let request = URLRequest(url: comps.url!)
+        
+        return session.reactive.data(with: request)
+            .mapError { _ in ClientError.requestError }
+            .attemptMap { return decode(from: $0.0).mapError { _ in ClientError.decodingError } }
+    }
+    
+    func get<T: Unboxable>(_ endpoint: Endpoint) -> SignalProducer<[T], ClientError> {
+        let url = Client.gateway.appendingPathComponent(endpoint.path)
+        var comps = URLComponents(url: url, resolvingAgainstBaseURL: true)!
+        comps.queryItems = [URLQueryItem(name: "opt_fields", value: endpoint.fields.joined(separator: ","))]
+        
+        let request = URLRequest(url: comps.url!)
+        
+        return session.reactive.data(with: request)
+            .mapError { _ in ClientError.requestError }
+            .attemptMap { return decode(from: $0.0).mapError { _ in ClientError.decodingError } }
+    }
+
+}
+
+extension Client.Endpoint {
+    var path: String {
+        switch self {
+        case .projects: return "/projects"
+        }
+    }
+    
+    var fields: [String] {
+        switch self {
+        case .projects:
+            return ["name", "color"]
+        }
     }
 }
-//
-//extension Batman.Endpoint: Hashable {
-//    
-//}
