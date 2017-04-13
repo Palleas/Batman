@@ -1,11 +1,15 @@
 import Foundation
 import UIKit
+import ReactiveSwift
+import ReactiveCocoa
 
 final class CreateFlowCoordinator: Coordinator {
 
     fileprivate let client: Client
     
     private(set) lazy var controller = UINavigationController()
+    
+    fileprivate let project = MutableProperty<Project?>(nil)
     
     init(client: Client) {
         self.client = client
@@ -14,6 +18,8 @@ final class CreateFlowCoordinator: Coordinator {
     func start() {
         let root = StoryboardScene.Main.instantiateCreate()
         root.delegate = self
+        _ = root.view
+        root.projectButton.reactive.title <~ project.map { $0?.name ?? "No-project" }
         
         controller.viewControllers = [root]
     }
@@ -21,14 +27,16 @@ final class CreateFlowCoordinator: Coordinator {
 
 extension CreateFlowCoordinator: CreateViewControllerDelegate {
     func didTapSelectProject() {
-        let project = SelectProjectFlowCoordinator(client: client)
-        project.start()
+        let projectCoordinator = SelectProjectFlowCoordinator(client: client)
+        projectCoordinator.start()
         
-        self.children.append(project)
+        self.children.append(projectCoordinator)
         
-        controller.pushViewController(project.controller, animated: true)
+        controller.pushViewController(projectCoordinator.controller, animated: true)
         
-        project.selected.producer.skipNil().startWithValues { [weak self] project in
+        project <~ projectCoordinator.selected
+        
+        projectCoordinator.selected.producer.skipNil().startWithValues { [weak self] project in
             self?.controller.popViewController(animated: true)
             print("Selected project \(project.name)")
         }

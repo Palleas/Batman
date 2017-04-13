@@ -1,3 +1,4 @@
 github "antitypical/Result" "3.2.1"
 github "johnsundell/unbox" "2.4.0"
+github "reactivecocoa/reactivecocoa" "5.0.3"
 github "reactivecocoa/reactiveswift" "1.1.1"

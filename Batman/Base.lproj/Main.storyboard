@@ -32,7 +32,7 @@
                                 <rect key="frame" x="16" y="627" width="343" height="30"/>
                                 <state key="normal" title="Project &gt;"/>
                                 <connections>
-                                    <action selector="didTapCreate" destination="BYZ-38-t0r" eventType="touchUpInside" id="dlb-Fq-c9T"/>
+                                    <action selector="didTapProject:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oay-la-Zad"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -47,6 +47,9 @@
                             <constraint firstAttribute="trailing" secondItem="sy9-nO-sdE" secondAttribute="trailing" id="qjX-Jn-fbt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="projectButton" destination="xBf-kT-nMj" id="EQM-R6-EE8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
