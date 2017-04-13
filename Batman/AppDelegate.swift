@@ -9,9 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         BuddyBuildSDK.setup()
         
-
-        let token = ProcessInfo.processInfo.environment["ASANA_TOKEN"].flatMap(Token.init)!
-        
+        let token = Token(value: keyOrProcessEnv("ASANA_TOKEN"))
         self.createFlow = CreateFlowCoordinator(client: Client(token: token))
         
         let window = UIWindow(frame: UIScreen.main.bounds)

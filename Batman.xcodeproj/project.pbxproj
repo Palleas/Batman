@@ -14,6 +14,7 @@
 		547DC498496B776A8E541D57 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62368C35768AACB90A5FD341 /* SystemConfiguration.framework */; };
 		5EE6E01F4C254DA18B2CFEA5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DFD84FFED69427041BE8B53 /* AVFoundation.framework */; };
 		770575B0F22129E8051C3CD5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6068FDAA46BE8AA84C923EFD /* CoreMedia.framework */; };
+		7A0802D41E9F9C8E007E9EBC /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0802D31E9F9C8E007E9EBC /* Credentials.swift */; };
 		7A1359471E9EB9BC006AB737 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1359461E9EB9BC006AB737 /* Project.swift */; };
 		7A1359491E9EB9DD006AB737 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1359481E9EB9DD006AB737 /* Token.swift */; };
 		7A13594B1E9EBD64006AB737 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A13594A1E9EBD64006AB737 /* JSONHelper.swift */; };
@@ -65,6 +66,7 @@
 		62368C35768AACB90A5FD341 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		654D41D979C97206E8D1803F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		73875FD4949066BD82478180 /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		7A0802D31E9F9C8E007E9EBC /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		7A1359441E9EB622006AB737 /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = "<group>"; };
 		7A1359461E9EB9BC006AB737 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		7A1359481E9EB9DD006AB737 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -88,7 +90,7 @@
 		7A32BA741E9E5631005882A0 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		7A32BA751E9E5631005882A0 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		7DFD84FFED69427041BE8B53 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		ACB5B2EAF73D31321B66272A /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
+		ACB5B2EAF73D31321B66272A /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		C522B4139BF1116DDAA71B8C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		D91AD6CEE322F865DFD0F2E5 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		FC703D8A7A518D5CB5463770 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -184,6 +186,7 @@
 			children = (
 				7A13594A1E9EBD64006AB737 /* JSONHelper.swift */,
 				7A1359591E9F0F06006AB737 /* Coordinator.swift */,
+				7A0802D31E9F9C8E007E9EBC /* Credentials.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				7A1359561E9F0D4B006AB737 /* Storyboards.swift in Sources */,
 				7A13595A1E9F0F06006AB737 /* Coordinator.swift in Sources */,
 				7A32BA731E9E5418005882A0 /* Client.swift in Sources */,
+				7A0802D41E9F9C8E007E9EBC /* Credentials.swift in Sources */,
 				7A1359531E9F0CC1006AB737 /* SelectProjectFlowCoordinator.swift in Sources */,
 				7A1B4BCD1E9F124B00CE507A /* ProjectsViewController.swift in Sources */,
 				7A1359471E9EB9BC006AB737 /* Project.swift in Sources */,
