@@ -20,6 +20,7 @@ final class CreateFlowCoordinator: Coordinator {
         root.delegate = self
         _ = root.view
         root.projectButton.reactive.title <~ project.map { $0?.name ?? "No-project" }
+        root.taskContent.reactive.backgroundColor <~ project.map { $0?.color?.raw ?? .white }
         
         controller.viewControllers = [root]
     }

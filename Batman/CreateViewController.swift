@@ -16,6 +16,7 @@ final class CreateViewController: UIViewController {
 
     weak var delegate: CreateViewControllerDelegate?
     
+    @IBOutlet weak var taskContent: UITextView!
     @IBOutlet weak var projectButton: UIButton!
 
     @IBAction func didTapProject(_ sender: Any) {

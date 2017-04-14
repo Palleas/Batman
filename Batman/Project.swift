@@ -26,10 +26,12 @@ struct Project: Unboxable {
         case lightWarmGray = "light-warm-gray"
     }
 
+    let id: Int
     let name: String
     let color: Color?
 
     init(unboxer: Unboxer) throws {
+        id = try unboxer.unbox(key: "id")
         name = try unboxer.unbox(key: "name")
         color = unboxer.unbox(key: "color")
     }

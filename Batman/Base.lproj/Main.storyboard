@@ -49,6 +49,7 @@
                     </view>
                     <connections>
                         <outlet property="projectButton" destination="xBf-kT-nMj" id="EQM-R6-EE8"/>
+                        <outlet property="taskContent" destination="sy9-nO-sdE" id="LQy-IG-mHK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

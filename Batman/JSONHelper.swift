@@ -23,3 +23,9 @@ func decode<T: Unboxable>(from data: Data) -> Result<[T], UnboxError> {
     }
 }
 
+protocol Encodable {
+    associatedtype Response
+    
+    func encode() -> Data?
+    
+}
