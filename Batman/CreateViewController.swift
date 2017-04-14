@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  Batman
-//
-//  Created by Romain Pouclet on 2017-04-12.
-//  Copyright © 2017 Perfectly-Cooked. All rights reserved.
-//
-
 import UIKit
 
 protocol CreateViewControllerDelegate: class {
@@ -18,6 +10,7 @@ final class CreateViewController: UIViewController {
     
     @IBOutlet weak var taskContent: UITextView!
     @IBOutlet weak var projectButton: UIButton!
+    @IBOutlet weak var pullToSaveLabel: UILabel! { didSet { pullToSaveLabel.alpha = 0 } }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,3 +25,12 @@ final class CreateViewController: UIViewController {
     }
 }
 
+extension CreateViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        pullToSaveLabel.alpha = min(abs(scrollView.contentOffset.y), 100) / 100
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        print("Save ?")
+    }
+}
