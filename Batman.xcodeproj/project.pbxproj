@@ -218,6 +218,7 @@
 		7A32BA5F1E9E5407005882A0 /* Batman */ = {
 			isa = PBXGroup;
 			children = (
+				7A8A88B71EA17D9F00093AA8 /* Views */,
 				7A32BA6C1E9E5407005882A0 /* Info.plist */,
 				7A32BA601E9E5407005882A0 /* AppDelegate.swift */,
 				7A1B4BD01E9F170700CE507A /* Create Project */,
@@ -227,6 +228,13 @@
 				7A1B4BD11E9F171100CE507A /* Utils */,
 			);
 			path = Batman;
+			sourceTree = "<group>";
+		};
+		7A8A88B71EA17D9F00093AA8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

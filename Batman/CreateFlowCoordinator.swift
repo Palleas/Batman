@@ -7,7 +7,12 @@ final class CreateFlowCoordinator: Coordinator {
 
     fileprivate let client: Client
     
-    private(set) lazy var controller = UINavigationController()
+    private(set) lazy var controller: UINavigationController = {
+        let navigationController = UINavigationController()
+        navigationController.isNavigationBarHidden = true
+        
+        return navigationController
+    }()
     
     fileprivate let project = MutableProperty<Project?>(nil)
     
@@ -19,8 +24,12 @@ final class CreateFlowCoordinator: Coordinator {
         let root = StoryboardScene.Main.instantiateCreate()
         root.delegate = self
         _ = root.view
+        
+        let backgroundProducer = project.map { $0?.color?.raw ?? .white }
+        root.taskContent.reactive.backgroundColor <~ backgroundProducer
+        root.view.reactive.backgroundColor <~ backgroundProducer
+
         root.projectButton.reactive.title <~ project.map { $0?.name ?? "No-project" }
-        root.taskContent.reactive.backgroundColor <~ project.map { $0?.color?.raw ?? .white }
         
         controller.viewControllers = [root]
     }

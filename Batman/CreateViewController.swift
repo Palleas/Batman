@@ -19,6 +19,14 @@ final class CreateViewController: UIViewController {
     @IBOutlet weak var taskContent: UITextView!
     @IBOutlet weak var projectButton: UIButton!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        taskContent.isUserInteractionEnabled = true
+        taskContent.alwaysBounceVertical = true
+        automaticallyAdjustsScrollViewInsets = false
+    }
+    
     @IBAction func didTapProject(_ sender: Any) {
         delegate?.didTapSelectProject()
     }
