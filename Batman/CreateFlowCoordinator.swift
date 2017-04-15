@@ -6,7 +6,8 @@ import ReactiveCocoa
 final class CreateFlowCoordinator: Coordinator {
 
     fileprivate let client: Client
-    
+    fileprivate lazy var root = StoryboardScene.Main.instantiateCreate()
+
     private(set) lazy var controller: UINavigationController = {
         let navigationController = UINavigationController()
         navigationController.isNavigationBarHidden = true
@@ -21,7 +22,6 @@ final class CreateFlowCoordinator: Coordinator {
     }
     
     func start() {
-        let root = StoryboardScene.Main.instantiateCreate()
         root.delegate = self
         _ = root.view
         
@@ -36,6 +36,20 @@ final class CreateFlowCoordinator: Coordinator {
 }
 
 extension CreateFlowCoordinator: CreateViewControllerDelegate {
+    func didReleaseToSave() {
+        guard let project = project.value else { return }
+        
+        let task = Task(name: root.taskContent.text, notes: "Notes", projects: [project])
+        client.create(task: task).startWithResult { result in
+            switch result {
+            case let .success(createdTask):
+                print("[Create task] Created task = \(createdTask)")
+            case let .failure(error):
+                print("[Create task] Got error = \(error)")
+            }
+        }
+    }
+
     func didTapSelectProject() {
         let projectCoordinator = SelectProjectFlowCoordinator(client: client)
         projectCoordinator.start()

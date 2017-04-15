@@ -60,11 +60,20 @@ final class Client {
         return get(.workspaces)
     }
     
-    func create<T: Encodable>(_ object: T, at: Endpoint) -> SignalProducer<T.Response, ClientError> {
-        return .empty
+    func create(task: Task) -> SignalProducer<CreatedTask, ClientError> {
+        return create(task, at: .tasks)
     }
     
-    func get<T: Unboxable>(_ endpoint: Endpoint) -> SignalProducer<T, ClientError> {
+    private func create<T: Encodable>(_ object: T, at endpoint: Endpoint) -> SignalProducer<T.Response, ClientError> {
+        let request = URLRequest.create(endpoint, object: object)
+        
+        return session.reactive.data(with: request)
+            .mapError { _ in ClientError.requestError }
+            .attemptMap { return decode(from: $0.0)
+                .mapError { _ in ClientError.decodingError } }
+    }
+    
+    private func get<T: Unboxable>(_ endpoint: Endpoint) -> SignalProducer<T, ClientError> {
         let request = URLRequest.create(endpoint)
         
         return session.reactive.data(with: request)
@@ -72,12 +81,15 @@ final class Client {
             .attemptMap { return decode(from: $0.0).mapError { _ in ClientError.decodingError } }
     }
     
-    func get<T: Unboxable>(_ endpoint: Endpoint) -> SignalProducer<[T], ClientError> {
+    private func get<T: Unboxable>(_ endpoint: Endpoint) -> SignalProducer<[T], ClientError> {
         let request = URLRequest.create(endpoint)
         
         return session.reactive.data(with: request)
             .mapError { _ in ClientError.requestError }
-            .attemptMap { return decode(from: $0.0).mapError { _ in ClientError.decodingError } }
+            .attemptMap { return decode(from: $0.0).mapError { error in
+                print("Got error = \(error)")
+                return ClientError.decodingError }
+        }
     }
 
 }

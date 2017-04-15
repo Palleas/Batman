@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import Unbox
 
 struct Task {
-    typealias Response = Task
+    typealias Response = CreatedTask
     
     let name: String
     
@@ -24,13 +25,22 @@ extension Task: Encodable {
         let projectIds = projects.map({ "\($0.id)" }).joined(separator: ",")
         
         let payload = [("name", name), ("notes", notes), ("projects", "\(projectIds)")]
-            .map { "\($0.0)=\($0.1)" }
+            .map { "\($0.0)=" + $0.1.addingPercentEncoding(withAllowedCharacters: .alphanumerics)! }
             .joined(separator: "&")
-            .addingPercentEncoding(withAllowedCharacters: .alphanumerics)
         
-        print("Payload = \(payload!)")
+        print("Payload = \(payload)")
         
-        return payload?.data(using: .utf8)
+        return payload.data(using: .utf8)
     }
     
+}
+
+struct CreatedTask {
+    let id: Int
+}
+
+extension CreatedTask: Unboxable {
+    init(unboxer: Unboxer) throws {
+        self.id = try unboxer.unbox(key: "id")
+    }
 }
