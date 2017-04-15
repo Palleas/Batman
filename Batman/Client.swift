@@ -35,6 +35,7 @@ final class Client {
     
     enum Endpoint {
         case projects
+        case project(id: Int)
         case workspaces
         case tasks
     }
@@ -54,6 +55,10 @@ final class Client {
     
     func projects() -> SignalProducer<[Project], ClientError> {
         return get(.projects)
+    }
+    
+    func project(id: Int) -> SignalProducer<Project, ClientError> {
+        return get(.project(id: id))
     }
     
     func workspaces() -> SignalProducer<[Workspace], ClientError> {
@@ -98,6 +103,7 @@ extension Client.Endpoint {
     var path: String {
         switch self {
         case .projects: return "/projects"
+        case let .project(id): return "/projects/\(id)"
         case .workspaces: return "/workspaces"
         case .tasks: return "/tasks"
         }
@@ -105,7 +111,7 @@ extension Client.Endpoint {
     
     var fields: [String]? {
         switch self {
-        case .projects:
+        case .projects, .project:
             return ["name", "color"]
         case .workspaces:
             return ["id", "name", "is_organization"]

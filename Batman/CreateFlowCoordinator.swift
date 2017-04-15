@@ -2,10 +2,14 @@ import Foundation
 import UIKit
 import ReactiveSwift
 import ReactiveCocoa
+import Result
 
 final class CreateFlowCoordinator: Coordinator {
 
+    fileprivate let store = Store()
+    
     fileprivate let client: Client
+    
     fileprivate lazy var root = StoryboardScene.Main.instantiateCreate()
 
     private(set) lazy var controller: UINavigationController = {
@@ -32,6 +36,16 @@ final class CreateFlowCoordinator: Coordinator {
         root.projectButton.reactive.title <~ project.map { $0?.name ?? "No-project" }
         
         controller.viewControllers = [root]
+        
+        project.producer.skipNil().map { $0.id }.startWithValues { [weak self] projectId in
+            self?.store.selectedProjectId = projectId
+        }
+        
+        if let projectId = store.selectedProjectId {
+            project <~ client.project(id: projectId).flatMapError { _ in
+                SignalProducer<Project, NoError>.empty
+            }
+        }
     }
 }
 

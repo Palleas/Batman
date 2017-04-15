@@ -40,6 +40,7 @@
 		7A32BA781E9E5631005882A0 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A32BA751E9E5631005882A0 /* Result.framework */; };
 		7A32BA791E9E5631005882A0 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A32BA751E9E5631005882A0 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A8A88B41EA1737400093AA8 /* Workspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A88B31EA1737400093AA8 /* Workspace.swift */; };
+		7AD634C81EA2DA590023DF00 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD634C71EA2DA590023DF00 /* Storage.swift */; };
 		83E7817B4F3392B7FD45F066 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F0D3AC648BF1D43D720BD0 /* QuartzCore.framework */; };
 		BF93F6CD95FAD76497EA9169 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C522B4139BF1116DDAA71B8C /* CoreVideo.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		7A32BA741E9E5631005882A0 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		7A32BA751E9E5631005882A0 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		7A8A88B31EA1737400093AA8 /* Workspace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
+		7AD634C71EA2DA590023DF00 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		7DFD84FFED69427041BE8B53 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		ACB5B2EAF73D31321B66272A /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		C522B4139BF1116DDAA71B8C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -171,6 +173,7 @@
 				7A1359481E9EB9DD006AB737 /* Token.swift */,
 				7A0B953E1EA16DD200C8D6FB /* Task.swift */,
 				7A8A88B31EA1737400093AA8 /* Workspace.swift */,
+				7AD634C71EA2DA590023DF00 /* Storage.swift */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				7A32BA731E9E5418005882A0 /* Client.swift in Sources */,
 				7A0802D41E9F9C8E007E9EBC /* Credentials.swift in Sources */,
 				7A1359531E9F0CC1006AB737 /* SelectProjectFlowCoordinator.swift in Sources */,
+				7AD634C81EA2DA590023DF00 /* Storage.swift in Sources */,
 				7A1B4BCD1E9F124B00CE507A /* ProjectsViewController.swift in Sources */,
 				7A1359471E9EB9BC006AB737 /* Project.swift in Sources */,
 			);
