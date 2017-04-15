@@ -21,7 +21,6 @@
 		7A13594B1E9EBD64006AB737 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A13594A1E9EBD64006AB737 /* JSONHelper.swift */; };
 		7A13594C1E9EC176006AB737 /* Unbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1359441E9EB622006AB737 /* Unbox.framework */; };
 		7A13594D1E9EC176006AB737 /* Unbox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1359441E9EB622006AB737 /* Unbox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7A13594F1E9F0485006AB737 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A13594E1E9F0485006AB737 /* Color.swift */; };
 		7A1359511E9F0CB1006AB737 /* CreateFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1359501E9F0CB1006AB737 /* CreateFlowCoordinator.swift */; };
 		7A1359531E9F0CC1006AB737 /* SelectProjectFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1359521E9F0CC1006AB737 /* SelectProjectFlowCoordinator.swift */; };
 		7A1359561E9F0D4B006AB737 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1359541E9F0D4B006AB737 /* Storyboards.swift */; };
@@ -74,7 +73,6 @@
 		7A1359461E9EB9BC006AB737 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		7A1359481E9EB9DD006AB737 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		7A13594A1E9EBD64006AB737 /* JSONHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
-		7A13594E1E9F0485006AB737 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		7A1359501E9F0CB1006AB737 /* CreateFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateFlowCoordinator.swift; sourceTree = "<group>"; };
 		7A1359521E9F0CC1006AB737 /* SelectProjectFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectProjectFlowCoordinator.swift; sourceTree = "<group>"; };
 		7A1359541E9F0D4B006AB737 /* Storyboards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
@@ -152,7 +150,6 @@
 				7A32BA691E9E5407005882A0 /* LaunchScreen.storyboard */,
 				7A1359541E9F0D4B006AB737 /* Storyboards.swift */,
 				7A1359551E9F0D4B006AB737 /* Assets.swift */,
-				7A13594E1E9F0485006AB737 /* Color.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -314,7 +311,6 @@
 				7A32BA631E9E5407005882A0 /* CreateViewController.swift in Sources */,
 				7A1359571E9F0D4B006AB737 /* Assets.swift in Sources */,
 				7A1359491E9EB9DD006AB737 /* Token.swift in Sources */,
-				7A13594F1E9F0485006AB737 /* Color.swift in Sources */,
 				7A32BA611E9E5407005882A0 /* AppDelegate.swift in Sources */,
 				7A13594B1E9EBD64006AB737 /* JSONHelper.swift in Sources */,
 				7A1359511E9F0CB1006AB737 /* CreateFlowCoordinator.swift in Sources */,
