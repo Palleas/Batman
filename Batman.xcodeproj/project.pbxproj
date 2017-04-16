@@ -29,6 +29,14 @@
 		7A1B4BCD1E9F124B00CE507A /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1B4BCC1E9F124B00CE507A /* ProjectsViewController.swift */; };
 		7A1B4BD31E9F190400CE507A /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1B4BD21E9F190400CE507A /* ReactiveCocoa.framework */; };
 		7A1B4BD41E9F190400CE507A /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1B4BD21E9F190400CE507A /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A2690E01EA3FC9400FEBBF8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2690DE1EA3FC9400FEBBF8 /* Nimble.framework */; };
+		7A2690E11EA3FC9400FEBBF8 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A2690DF1EA3FC9400FEBBF8 /* Quick.framework */; };
+		7A2690E31EA3FCA200FEBBF8 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A2690DE1EA3FC9400FEBBF8 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A2690E41EA3FCA200FEBBF8 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7A2690DF1EA3FC9400FEBBF8 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A2690E81EA3FD6700FEBBF8 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2690E71EA3FD6700FEBBF8 /* Builder.swift */; };
+		7A2690EA1EA3FDE700FEBBF8 /* BuilderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2690E91EA3FDE700FEBBF8 /* BuilderSpec.swift */; };
+		7A2690EC1EA3FEBB00FEBBF8 /* fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 7A2690EB1EA3FEBB00FEBBF8 /* fixtures */; };
+		7A2690ED1EA4007900FEBBF8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A32BA751E9E5631005882A0 /* Result.framework */; };
 		7A32BA611E9E5407005882A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BA601E9E5407005882A0 /* AppDelegate.swift */; };
 		7A32BA631E9E5407005882A0 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BA621E9E5407005882A0 /* CreateViewController.swift */; };
 		7A32BA661E9E5407005882A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A32BA641E9E5407005882A0 /* Main.storyboard */; };
@@ -45,7 +53,28 @@
 		BF93F6CD95FAD76497EA9169 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C522B4139BF1116DDAA71B8C /* CoreVideo.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7A2690D91EA3E6AB00FEBBF8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A32BA551E9E5407005882A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A32BA5C1E9E5407005882A0;
+			remoteInfo = Batman;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		7A2690E21EA3FC9800FEBBF8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7A2690E31EA3FCA200FEBBF8 /* Nimble.framework in CopyFiles */,
+				7A2690E41EA3FCA200FEBBF8 /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A32BA7A1E9E5631005882A0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,6 +110,13 @@
 		7A1359591E9F0F06006AB737 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7A1B4BCC1E9F124B00CE507A /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		7A1B4BD21E9F190400CE507A /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		7A2690D41EA3E6AB00FEBBF8 /* BatmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BatmanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A2690D81EA3E6AB00FEBBF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A2690DE1EA3FC9400FEBBF8 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		7A2690DF1EA3FC9400FEBBF8 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		7A2690E71EA3FD6700FEBBF8 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		7A2690E91EA3FDE700FEBBF8 /* BuilderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuilderSpec.swift; sourceTree = "<group>"; };
+		7A2690EB1EA3FEBB00FEBBF8 /* fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fixtures; sourceTree = "<group>"; };
 		7A32BA5D1E9E5407005882A0 /* Batman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Batman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A32BA601E9E5407005882A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A32BA621E9E5407005882A0 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +137,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7A2690D11EA3E6AB00FEBBF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A2690E01EA3FC9400FEBBF8 /* Nimble.framework in Frameworks */,
+				7A2690E11EA3FC9400FEBBF8 /* Quick.framework in Frameworks */,
+				7A2690ED1EA4007900FEBBF8 /* Result.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A32BA5A1E9E5407005882A0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,6 +173,8 @@
 		7A1359431E9EB622006AB737 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A2690DE1EA3FC9400FEBBF8 /* Nimble.framework */,
+				7A2690DF1EA3FC9400FEBBF8 /* Quick.framework */,
 				7A1B4BD21E9F190400CE507A /* ReactiveCocoa.framework */,
 				7A32BA741E9E5631005882A0 /* ReactiveSwift.framework */,
 				7A32BA751E9E5631005882A0 /* Result.framework */,
@@ -197,10 +245,21 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		7A2690D51EA3E6AB00FEBBF8 /* BatmanTests */ = {
+			isa = PBXGroup;
+			children = (
+				7A2690EB1EA3FEBB00FEBBF8 /* fixtures */,
+				7A2690D81EA3E6AB00FEBBF8 /* Info.plist */,
+				7A2690E91EA3FDE700FEBBF8 /* BuilderSpec.swift */,
+			);
+			path = BatmanTests;
+			sourceTree = "<group>";
+		};
 		7A32BA541E9E5407005882A0 = {
 			isa = PBXGroup;
 			children = (
 				7A32BA5F1E9E5407005882A0 /* Batman */,
+				7A2690D51EA3E6AB00FEBBF8 /* BatmanTests */,
 				7A32BA5E1E9E5407005882A0 /* Products */,
 				7A1359431E9EB622006AB737 /* Frameworks */,
 				73875FD4949066BD82478180 /* Bridging-Header.h */,
@@ -211,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				7A32BA5D1E9E5407005882A0 /* Batman.app */,
+				7A2690D41EA3E6AB00FEBBF8 /* BatmanTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,6 +286,7 @@
 				7A1359581E9F0D53006AB737 /* Resources */,
 				7A1B4BCE1E9F16F200CE507A /* Select project */,
 				7A1B4BD11E9F171100CE507A /* Utils */,
+				7A2690E71EA3FD6700FEBBF8 /* Builder.swift */,
 			);
 			path = Batman;
 			sourceTree = "<group>";
@@ -240,6 +301,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7A2690D31EA3E6AB00FEBBF8 /* BatmanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A2690DD1EA3E6AB00FEBBF8 /* Build configuration list for PBXNativeTarget "BatmanTests" */;
+			buildPhases = (
+				7A2690D01EA3E6AB00FEBBF8 /* Sources */,
+				7A2690D11EA3E6AB00FEBBF8 /* Frameworks */,
+				7A2690D21EA3E6AB00FEBBF8 /* Resources */,
+				7A2690E21EA3FC9800FEBBF8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A2690DA1EA3E6AB00FEBBF8 /* PBXTargetDependency */,
+			);
+			name = BatmanTests;
+			productName = BatmanTests;
+			productReference = 7A2690D41EA3E6AB00FEBBF8 /* BatmanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		7A32BA5C1E9E5407005882A0 /* Batman */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A32BA6F1E9E5407005882A0 /* Build configuration list for PBXNativeTarget "Batman" */;
@@ -268,6 +348,13 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Perfectly-Cooked";
 				TargetAttributes = {
+					7A2690D31EA3E6AB00FEBBF8 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 8VS9JKFDZS;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7A32BA5C1E9E5407005882A0;
+					};
 					7A32BA5C1E9E5407005882A0 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 8VS9JKFDZS;
@@ -289,11 +376,20 @@
 			projectRoot = "";
 			targets = (
 				7A32BA5C1E9E5407005882A0 /* Batman */,
+				7A2690D31EA3E6AB00FEBBF8 /* BatmanTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7A2690D21EA3E6AB00FEBBF8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A2690EC1EA3FEBB00FEBBF8 /* fixtures in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A32BA5B1E9E5407005882A0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,6 +403,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7A2690D01EA3E6AB00FEBBF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A2690EA1EA3FDE700FEBBF8 /* BuilderSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7A32BA591E9E5407005882A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,6 +422,7 @@
 				7A13594B1E9EBD64006AB737 /* JSONHelper.swift in Sources */,
 				7A1359511E9F0CB1006AB737 /* CreateFlowCoordinator.swift in Sources */,
 				7A0B953F1EA16DD200C8D6FB /* Task.swift in Sources */,
+				7A2690E81EA3FD6700FEBBF8 /* Builder.swift in Sources */,
 				7A1359561E9F0D4B006AB737 /* Storyboards.swift in Sources */,
 				7A8A88B41EA1737400093AA8 /* Workspace.swift in Sources */,
 				7A13595A1E9F0F06006AB737 /* Coordinator.swift in Sources */,
@@ -331,6 +436,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7A2690DA1EA3E6AB00FEBBF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A32BA5C1E9E5407005882A0 /* Batman */;
+			targetProxy = 7A2690D91EA3E6AB00FEBBF8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7A32BA641E9E5407005882A0 /* Main.storyboard */ = {
@@ -352,6 +465,45 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7A2690DB1EA3E6AB00FEBBF8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 8VS9JKFDZS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = BatmanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.BatmanTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Batman.app/Batman";
+			};
+			name = Debug;
+		};
+		7A2690DC1EA3E6AB00FEBBF8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 8VS9JKFDZS;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = BatmanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.BatmanTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Batman.app/Batman";
+			};
+			name = Release;
+		};
 		7A32BA6D1E9E5407005882A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -488,6 +640,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7A2690DD1EA3E6AB00FEBBF8 /* Build configuration list for PBXNativeTarget "BatmanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A2690DB1EA3E6AB00FEBBF8 /* Debug */,
+				7A2690DC1EA3E6AB00FEBBF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		7A32BA581E9E5407005882A0 /* Build configuration list for PBXProject "Batman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
