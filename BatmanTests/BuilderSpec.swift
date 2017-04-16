@@ -15,15 +15,29 @@ class BuilderSpec: QuickSpec {
                 let result = Builder.task(from: content)
 
                 expect(result.value?.title) == "This is a very important task to do"
-                expect(result.value?.note) == "For the following reason\n* Reason 1\n* Reason 2\n* Reason 3"
+                expect(result.value?.notes) == "For the following reason\n\n* Reason 1\n* Reason 2\n* Reason 3"
+            }
+            
+            it("retrieves the title when there is no notes") {
+                let content = load(.file("task-content-without-notes"))
+                let result = Builder.task(from: content)
+                
+                expect(result.value?.title) == "This is a very important task to do"
+                expect(result.value?.notes).to(beNil())
             }
             
             it("fails when the content is empty") {
+                let emptyContent = ""
+                let result = Builder.task(from: emptyContent)
                 
+                expect(result.error) == .missingContent
             }
             
             it("fails when the content is only spaces") {
+                let emptyContent = "     \t \t   \n \n"
+                let result = Builder.task(from: emptyContent)
                 
+                expect(result.error) == .missingContent
             }
         }
     }
