@@ -53,7 +53,9 @@ extension CreateFlowCoordinator: CreateViewControllerDelegate {
     func didReleaseToSave() {
         guard let project = project.value else { return }
         
-        let task = Task(name: root.taskContent.text, notes: "Notes", projects: [project])
+        guard case let .success(title, notes) = Builder.task(from: root.taskContent.text) else { return }
+        
+        let task = Task(name: title, notes: notes ?? "", projects: [project])
         client.create(task: task).startWithResult { result in
             switch result {
             case let .success(createdTask):
