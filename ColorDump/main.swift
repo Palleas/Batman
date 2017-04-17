@@ -1,6 +1,36 @@
 import Foundation
 
-func main() {
+
+func main(argv: [String]) {
+    guard argv.count > 1 else {
+        fatalError("Usage ColorDump file.sketch")
+    }
+    
+    let sketchFile = CommandLine.arguments[1]
+    
+    let filename = UUID().uuidString
+    let path = (NSTemporaryDirectory() as NSString).appendingPathComponent(filename)
+    print("Temoporary dir is \(path)")
+    
+    // Open Sketch file
+    let t = Process()
+    t.arguments = [sketchFile, "-d", path]
+    t.launchPath = "/usr/bin/unzip"
+    t.launch()
+    t.waitUntilExit()
+    
+    // Retrieve the `Documents.json`
+    let document = (path as NSString).appendingPathComponent("document.json")
+    
+    guard FileManager.default.fileExists(atPath: document) else {
+        fatalError("Unable to parse Sketch file (no documents.json)")
+    }
+    
+    // Extract content from document.json
+    let content = try! Data(contentsOf: URL(fileURLWithPath: document))
+    var payload = try! JSONSerialization.jsonObject(with: content, options: .allowFragments) as! [AnyHashable: Any]
+    
+    // Extract colors
     let colors: [[String: Any]] = ProjectColor.all.map { color in
         var red: CGFloat = 0
         var green: CGFloat = 0
@@ -16,9 +46,25 @@ func main() {
                 "red": red]
     }
     
-    let json = try! JSONSerialization.data(withJSONObject: colors, options: .prettyPrinted)
-    let jsonString = String(data: json, encoding: .utf8)!
-    print(jsonString)
+    // Update "document.json"
+    var assets = payload["assets"] as! [AnyHashable: Any]
+    assets["colors"] = colors
+    payload["assets"] = assets
+    
+    // Serialize and store!
+    let newContent = try! JSONSerialization.data(withJSONObject: payload, options: .prettyPrinted)
+    try! newContent.write(to: URL(fileURLWithPath: document))
+    
+    // Close Sketch file
+    let close = Process()
+    close.launchPath = "/usr/bin/zip"
+    close.currentDirectoryPath = path
+    close.arguments = ["-r", sketchFile, "*"]
+    close.launch()
+    close.waitUntilExit()
 }
 
-main()
+
+//CommandLine.arguments
+
+main(argv: CommandLine.arguments)
