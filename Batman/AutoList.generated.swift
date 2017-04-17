@@ -2,9 +2,9 @@
 // DO NOT EDIT
 
 
-extension Project.Color {
+extension ProjectColor {
 
-    static var all: [Project.Color] {
+    static var all: [ProjectColor] {
         return [.darkPink,.darkGreen,.darkBlue,.darkRed,.darkTeal,.darkBrown,.darkOrange,.darkPurple,.darkWarmGray,.lightPink,.lightGreen,.lightBlue,.lightRed,.lightTeal,.lightYellow,.lightOrange,.lightPurple,.lightWarmGray]
     }
 

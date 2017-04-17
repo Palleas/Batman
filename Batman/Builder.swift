@@ -1,8 +1,6 @@
 import Foundation
 import Result
 
-protocol AutoEquatable {}
-
 struct Builder {
     enum BuilderError: Error, AutoEquatable {
         case missingContent
