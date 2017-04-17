@@ -1,0 +1,9 @@
+{% for type in types.implementing.AutoList|enum %}
+extension {{ type.name }} {
+
+    static var all: [{{ type.name }}] {
+        return [{% for case in type.cases %}.{{ case.name }}{% if not forloop.last %},{% endif %}{% endfor %}]
+    }
+
+}
+{% endfor %}

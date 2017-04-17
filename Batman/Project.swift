@@ -3,9 +3,11 @@ import Unbox
 import class UIKit.UIColor
 import struct UIKit.CGFloat
 
+protocol AutoList {}
+
 struct Project: Unboxable {
 
-    enum Color: String, UnboxableEnum {
+    enum Color: String, UnboxableEnum, AutoList  {
         case darkPink = "dark-pink"
         case darkGreen = "dark-green"
         case darkBlue = "dark-blue"

@@ -38,6 +38,7 @@
 		7A2690EC1EA3FEBB00FEBBF8 /* fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 7A2690EB1EA3FEBB00FEBBF8 /* fixtures */; };
 		7A2690ED1EA4007900FEBBF8 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A32BA751E9E5631005882A0 /* Result.framework */; };
 		7A2690EF1EA4045F00FEBBF8 /* AutoEquatable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2690EE1EA4045F00FEBBF8 /* AutoEquatable.generated.swift */; };
+		7A2690F11EA4594700FEBBF8 /* AutoList.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2690F01EA4594700FEBBF8 /* AutoList.generated.swift */; };
 		7A32BA611E9E5407005882A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BA601E9E5407005882A0 /* AppDelegate.swift */; };
 		7A32BA631E9E5407005882A0 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32BA621E9E5407005882A0 /* CreateViewController.swift */; };
 		7A32BA661E9E5407005882A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A32BA641E9E5407005882A0 /* Main.storyboard */; };
@@ -119,6 +120,7 @@
 		7A2690E91EA3FDE700FEBBF8 /* BuilderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuilderSpec.swift; sourceTree = "<group>"; };
 		7A2690EB1EA3FEBB00FEBBF8 /* fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fixtures; sourceTree = "<group>"; };
 		7A2690EE1EA4045F00FEBBF8 /* AutoEquatable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoEquatable.generated.swift; sourceTree = "<group>"; };
+		7A2690F01EA4594700FEBBF8 /* AutoList.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoList.generated.swift; sourceTree = "<group>"; };
 		7A32BA5D1E9E5407005882A0 /* Batman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Batman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A32BA601E9E5407005882A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A32BA621E9E5407005882A0 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 		7A32BA5F1E9E5407005882A0 /* Batman */ = {
 			isa = PBXGroup;
 			children = (
+				7A2690F01EA4594700FEBBF8 /* AutoList.generated.swift */,
 				7A2690EE1EA4045F00FEBBF8 /* AutoEquatable.generated.swift */,
 				7A8A88B71EA17D9F00093AA8 /* Views */,
 				7A32BA6C1E9E5407005882A0 /* Info.plist */,
@@ -436,6 +439,7 @@
 				7AD634C81EA2DA590023DF00 /* Storage.swift in Sources */,
 				7A1B4BCD1E9F124B00CE507A /* ProjectsViewController.swift in Sources */,
 				7A1359471E9EB9BC006AB737 /* Project.swift in Sources */,
+				7A2690F11EA4594700FEBBF8 /* AutoList.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +655,7 @@
 				7A2690DC1EA3E6AB00FEBBF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A32BA581E9E5407005882A0 /* Build configuration list for PBXProject "Batman" */ = {
 			isa = XCConfigurationList;
