@@ -72,12 +72,12 @@ extension CreateFlowCoordinator: CreateViewControllerDelegate {
         
         self.children.append(projectCoordinator)
         
-        controller.pushViewController(projectCoordinator.controller, animated: true)
+        controller.present(projectCoordinator.controller, animated: true, completion: nil)
         
         project <~ projectCoordinator.selected
         
         projectCoordinator.selected.producer.skipNil().startWithValues { [weak self] project in
-            self?.controller.popViewController(animated: true)
+            self?.controller.dismiss(animated: true, completion: nil)
             print("Selected project \(project.name)")
         }
     }

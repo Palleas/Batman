@@ -15,6 +15,8 @@ final class ProjectsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .clear
+        
         projects.producer.observe(on: UIScheduler()).startWithValues { [weak self] _ in
             self?.tableView.reloadData()
         }
@@ -27,9 +29,8 @@ final class ProjectsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let project = projects.value[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Project", for: indexPath)
-        cell.textLabel?.textColor = project.color?.raw
-        cell.textLabel?.text = project.name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Project", for: indexPath) as! ProjectCell
+        cell.configure(name: project.name, color: project.color?.raw ?? .white)
         
         return cell
     }

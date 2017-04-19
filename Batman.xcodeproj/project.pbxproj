@@ -55,6 +55,8 @@
 		7A32BA771E9E5631005882A0 /* ReactiveSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A32BA741E9E5631005882A0 /* ReactiveSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A32BA781E9E5631005882A0 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A32BA751E9E5631005882A0 /* Result.framework */; };
 		7A32BA791E9E5631005882A0 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A32BA751E9E5631005882A0 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A35A7AC1EA6C831004746FC /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A35A7AB1EA6C831004746FC /* ProjectCell.swift */; };
+		7A35A7AF1EA6C956004746FC /* BlurPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A35A7AE1EA6C956004746FC /* BlurPresentationController.swift */; };
 		7A8A88B41EA1737400093AA8 /* Workspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A88B31EA1737400093AA8 /* Workspace.swift */; };
 		7AD634C81EA2DA590023DF00 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD634C71EA2DA590023DF00 /* Storage.swift */; };
 		83E7817B4F3392B7FD45F066 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F0D3AC648BF1D43D720BD0 /* QuartzCore.framework */; };
@@ -134,8 +136,8 @@
 		7A2690E71EA3FD6700FEBBF8 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		7A2690E91EA3FDE700FEBBF8 /* BuilderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuilderSpec.swift; sourceTree = "<group>"; };
 		7A2690EB1EA3FEBB00FEBBF8 /* fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fixtures; sourceTree = "<group>"; };
-		7A2690EE1EA4045F00FEBBF8 /* AutoEquatable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoEquatable.generated.swift; sourceTree = "<group>"; };
-		7A2690F01EA4594700FEBBF8 /* AutoList.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoList.generated.swift; sourceTree = "<group>"; };
+		7A2690EE1EA4045F00FEBBF8 /* AutoEquatable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoEquatable.generated.swift; path = Batman/AutoEquatable.generated.swift; sourceTree = "<group>"; };
+		7A2690F01EA4594700FEBBF8 /* AutoList.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoList.generated.swift; path = Batman/AutoList.generated.swift; sourceTree = "<group>"; };
 		7A2690F31EA529FF00FEBBF8 /* ProjectColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectColor.swift; sourceTree = "<group>"; };
 		7A2690F91EA52A3900FEBBF8 /* ColorDump */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ColorDump; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2690FB1EA52A3900FEBBF8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -150,6 +152,8 @@
 		7A32BA721E9E5418005882A0 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		7A32BA741E9E5631005882A0 /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
 		7A32BA751E9E5631005882A0 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		7A35A7AB1EA6C831004746FC /* ProjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
+		7A35A7AE1EA6C956004746FC /* BlurPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurPresentationController.swift; sourceTree = "<group>"; };
 		7A8A88B31EA1737400093AA8 /* Workspace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
 		7AD634C71EA2DA590023DF00 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		7DFD84FFED69427041BE8B53 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -237,8 +241,6 @@
 		7A1B4BCE1E9F16F200CE507A /* Select project */ = {
 			isa = PBXGroup;
 			children = (
-				7A1359521E9F0CC1006AB737 /* SelectProjectFlowCoordinator.swift */,
-				7A1B4BCC1E9F124B00CE507A /* ProjectsViewController.swift */,
 			);
 			name = "Select project";
 			sourceTree = "<group>";
@@ -246,30 +248,27 @@
 		7A1B4BCF1E9F170100CE507A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				7A2690E71EA3FD6700FEBBF8 /* Builder.swift */,
 				7A32BA721E9E5418005882A0 /* Client.swift */,
-				7A1359461E9EB9BC006AB737 /* Project.swift */,
 				7A1359481E9EB9DD006AB737 /* Token.swift */,
-				7A0B953E1EA16DD200C8D6FB /* Task.swift */,
-				7A8A88B31EA1737400093AA8 /* Workspace.swift */,
 				7AD634C71EA2DA590023DF00 /* Storage.swift */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
 		};
-		7A1B4BD01E9F170700CE507A /* Create Project */ = {
+		7A1B4BD01E9F170700CE507A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7A1B4BCC1E9F124B00CE507A /* ProjectsViewController.swift */,
 				7A32BA621E9E5407005882A0 /* CreateViewController.swift */,
-				7A1359501E9F0CB1006AB737 /* CreateFlowCoordinator.swift */,
 			);
-			name = "Create Project";
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		7A1B4BD11E9F171100CE507A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				7A13594A1E9EBD64006AB737 /* JSONHelper.swift */,
-				7A1359591E9F0F06006AB737 /* Coordinator.swift */,
 				7A0802D31E9F9C8E007E9EBC /* Credentials.swift */,
 			);
 			name = Utils;
@@ -290,6 +289,8 @@
 			children = (
 				7A2690F31EA529FF00FEBBF8 /* ProjectColor.swift */,
 				7A2691021EA52B5D00FEBBF8 /* Sourcery.swift */,
+				7A2690F01EA4594700FEBBF8 /* AutoList.generated.swift */,
+				7A2690EE1EA4045F00FEBBF8 /* AutoEquatable.generated.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -328,19 +329,56 @@
 		7A32BA5F1E9E5407005882A0 /* Batman */ = {
 			isa = PBXGroup;
 			children = (
-				7A2690F01EA4594700FEBBF8 /* AutoList.generated.swift */,
-				7A2690EE1EA4045F00FEBBF8 /* AutoEquatable.generated.swift */,
-				7A8A88B71EA17D9F00093AA8 /* Views */,
-				7A32BA6C1E9E5407005882A0 /* Info.plist */,
+				7A35A7AD1EA6C948004746FC /* Transition */,
+				7A35A7AA1EA6C824004746FC /* Views */,
 				7A32BA601E9E5407005882A0 /* AppDelegate.swift */,
-				7A1B4BD01E9F170700CE507A /* Create Project */,
 				7A1B4BCF1E9F170100CE507A /* Domain */,
+				7A35A7A81EA6C751004746FC /* Flow Coordinators */,
+				7A32BA6C1E9E5407005882A0 /* Info.plist */,
+				7A35A7A91EA6C77F004746FC /* Model */,
 				7A1359581E9F0D53006AB737 /* Resources */,
 				7A1B4BCE1E9F16F200CE507A /* Select project */,
 				7A1B4BD11E9F171100CE507A /* Utils */,
-				7A2690E71EA3FD6700FEBBF8 /* Builder.swift */,
+				7A1B4BD01E9F170700CE507A /* View Controllers */,
+				7A8A88B71EA17D9F00093AA8 /* Views */,
 			);
 			path = Batman;
+			sourceTree = "<group>";
+		};
+		7A35A7A81EA6C751004746FC /* Flow Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				7A1359591E9F0F06006AB737 /* Coordinator.swift */,
+				7A1359501E9F0CB1006AB737 /* CreateFlowCoordinator.swift */,
+				7A1359521E9F0CC1006AB737 /* SelectProjectFlowCoordinator.swift */,
+			);
+			name = "Flow Coordinators";
+			sourceTree = "<group>";
+		};
+		7A35A7A91EA6C77F004746FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7A1359461E9EB9BC006AB737 /* Project.swift */,
+				7A0B953E1EA16DD200C8D6FB /* Task.swift */,
+				7A8A88B31EA1737400093AA8 /* Workspace.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7A35A7AA1EA6C824004746FC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7A35A7AB1EA6C831004746FC /* ProjectCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7A35A7AD1EA6C948004746FC /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				7A35A7AE1EA6C956004746FC /* BlurPresentationController.swift */,
+			);
+			name = Transition;
 			sourceTree = "<group>";
 		};
 		7A8A88B71EA17D9F00093AA8 /* Views */ = {
@@ -502,10 +540,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A2690EF1EA4045F00FEBBF8 /* AutoEquatable.generated.swift in Sources */,
+				7A35A7AC1EA6C831004746FC /* ProjectCell.swift in Sources */,
 				7A32BA631E9E5407005882A0 /* CreateViewController.swift in Sources */,
 				7A1359571E9F0D4B006AB737 /* Assets.swift in Sources */,
 				7A1359491E9EB9DD006AB737 /* Token.swift in Sources */,
 				7A32BA611E9E5407005882A0 /* AppDelegate.swift in Sources */,
+				7A35A7AF1EA6C956004746FC /* BlurPresentationController.swift in Sources */,
 				7A13594B1E9EBD64006AB737 /* JSONHelper.swift in Sources */,
 				7A1359511E9F0CB1006AB737 /* CreateFlowCoordinator.swift in Sources */,
 				7A0B953F1EA16DD200C8D6FB /* Task.swift in Sources */,
@@ -770,6 +810,7 @@
 				7A2690FF1EA52A3900FEBBF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A32BA581E9E5407005882A0 /* Build configuration list for PBXProject "Batman" */ = {
 			isa = XCConfigurationList;

@@ -1,5 +1,5 @@
 import Foundation
 
-class Coordinator {
+class Coordinator: NSObject {
     var children = [Coordinator]()
 }

@@ -78,13 +78,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Project" id="SK6-bq-hTy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Project" id="SK6-bq-hTy" customClass="ProjectCell" customModule="Batman" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SK6-bq-hTy" id="h9e-6g-n4q">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNF-vC-g2u">
+                                            <rect key="frame" x="0.0" y="0.0" width="10" height="43.5"/>
+                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="10" id="InZ-B7-dNz"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoU-xx-FOV">
+                                            <rect key="frame" x="20" y="11" width="337" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="NoU-xx-FOV" firstAttribute="leading" secondItem="xNF-vC-g2u" secondAttribute="trailing" constant="10" id="GtT-c5-yI9"/>
+                                        <constraint firstItem="xNF-vC-g2u" firstAttribute="leading" secondItem="h9e-6g-n4q" secondAttribute="leading" id="cow-Kx-fLb"/>
+                                        <constraint firstAttribute="bottom" secondItem="xNF-vC-g2u" secondAttribute="bottom" id="rd3-kZ-5Fg"/>
+                                        <constraint firstItem="NoU-xx-FOV" firstAttribute="centerY" secondItem="h9e-6g-n4q" secondAttribute="centerY" id="t65-jf-Ufs"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="NoU-xx-FOV" secondAttribute="trailing" constant="10" id="tG7-sE-xXE"/>
+                                        <constraint firstItem="xNF-vC-g2u" firstAttribute="top" secondItem="h9e-6g-n4q" secondAttribute="top" id="wZa-wd-zqm"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="colorIndicator" destination="xNF-vC-g2u" id="pks-2T-WFr"/>
+                                    <outlet property="nameLabel" destination="NoU-xx-FOV" id="YBV-Ro-fz3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -95,7 +122,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isq-P2-DcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="974" y="60"/>
+            <point key="canvasLocation" x="980" y="38"/>
         </scene>
     </scenes>
 </document>

@@ -3,8 +3,14 @@ import ReactiveSwift
 import Result
 
 final class SelectProjectFlowCoordinator: Coordinator {
-
-    private(set) lazy var controller = StoryboardScene.Main.instantiateProjects()
+    
+    private(set) lazy var controller: ProjectsViewController = {
+        let controller = StoryboardScene.Main.instantiateProjects()
+        controller.modalPresentationStyle = .custom
+        controller.transitioningDelegate = self
+        
+        return controller
+    }()
     
     private let client: Client
     
@@ -27,4 +33,12 @@ extension SelectProjectFlowCoordinator: ProjectsViewControllerDelegate {
     func didSelect(project: Project) {
         selected.swap(project)
     }
+}
+
+extension SelectProjectFlowCoordinator: UIViewControllerTransitioningDelegate {
+    
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return BlurPresentationController(presentedViewController: presented, presenting: presenting)
+    }
+    
 }
