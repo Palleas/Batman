@@ -1,7 +1,7 @@
 import UIKit
 
 final class BlurPresentationController: UIPresentationController {
-    
+
     private let blur: UIVisualEffectView = {
         let view = UIVisualEffectView(effect: nil)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -27,7 +27,7 @@ final class BlurPresentationController: UIPresentationController {
         ])
         
         presentedViewController.transitionCoordinator?.animate(alongsideTransition: { (context) in
-            self.blur.effect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+            self.blur.effect = UIBlurEffect(style: .dark)
         }, completion: nil)
     }
     

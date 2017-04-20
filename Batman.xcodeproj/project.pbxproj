@@ -59,6 +59,7 @@
 		7A35A7AF1EA6C956004746FC /* BlurPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A35A7AE1EA6C956004746FC /* BlurPresentationController.swift */; };
 		7A8A88B41EA1737400093AA8 /* Workspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A88B31EA1737400093AA8 /* Workspace.swift */; };
 		7AD634C81EA2DA590023DF00 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD634C71EA2DA590023DF00 /* Storage.swift */; };
+		7AE510B61EA8459000403245 /* ProjectsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE510B51EA8459000403245 /* ProjectsHeader.swift */; };
 		83E7817B4F3392B7FD45F066 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F0D3AC648BF1D43D720BD0 /* QuartzCore.framework */; };
 		BF93F6CD95FAD76497EA9169 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C522B4139BF1116DDAA71B8C /* CoreVideo.framework */; };
 /* End PBXBuildFile section */
@@ -156,6 +157,7 @@
 		7A35A7AE1EA6C956004746FC /* BlurPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurPresentationController.swift; sourceTree = "<group>"; };
 		7A8A88B31EA1737400093AA8 /* Workspace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
 		7AD634C71EA2DA590023DF00 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		7AE510B51EA8459000403245 /* ProjectsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsHeader.swift; sourceTree = "<group>"; };
 		7DFD84FFED69427041BE8B53 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		ACB5B2EAF73D31321B66272A /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		C522B4139BF1116DDAA71B8C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -236,13 +238,6 @@
 				7A1359551E9F0D4B006AB737 /* Assets.swift */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		7A1B4BCE1E9F16F200CE507A /* Select project */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Select project";
 			sourceTree = "<group>";
 		};
 		7A1B4BCF1E9F170100CE507A /* Domain */ = {
@@ -337,10 +332,8 @@
 				7A32BA6C1E9E5407005882A0 /* Info.plist */,
 				7A35A7A91EA6C77F004746FC /* Model */,
 				7A1359581E9F0D53006AB737 /* Resources */,
-				7A1B4BCE1E9F16F200CE507A /* Select project */,
 				7A1B4BD11E9F171100CE507A /* Utils */,
 				7A1B4BD01E9F170700CE507A /* View Controllers */,
-				7A8A88B71EA17D9F00093AA8 /* Views */,
 			);
 			path = Batman;
 			sourceTree = "<group>";
@@ -369,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				7A35A7AB1EA6C831004746FC /* ProjectCell.swift */,
+				7AE510B51EA8459000403245 /* ProjectsHeader.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -379,13 +373,6 @@
 				7A35A7AE1EA6C956004746FC /* BlurPresentationController.swift */,
 			);
 			name = Transition;
-			sourceTree = "<group>";
-		};
-		7A8A88B71EA17D9F00093AA8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,6 +536,7 @@
 				7A13594B1E9EBD64006AB737 /* JSONHelper.swift in Sources */,
 				7A1359511E9F0CB1006AB737 /* CreateFlowCoordinator.swift in Sources */,
 				7A0B953F1EA16DD200C8D6FB /* Task.swift in Sources */,
+				7AE510B61EA8459000403245 /* ProjectsHeader.swift in Sources */,
 				7A2690E81EA3FD6700FEBBF8 /* Builder.swift in Sources */,
 				7A1359561E9F0D4B006AB737 /* Storyboards.swift in Sources */,
 				7A8A88B41EA1737400093AA8 /* Workspace.swift in Sources */,

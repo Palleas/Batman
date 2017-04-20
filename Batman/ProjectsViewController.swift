@@ -16,6 +16,10 @@ final class ProjectsViewController: UITableViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .clear
+        tableView.backgroundColor = .clear
+        
+        tableView.tableHeaderView = ProjectsHeader(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: 200)))
+        tableView.tableFooterView = UIView()
         
         projects.producer.observe(on: UIScheduler()).startWithValues { [weak self] _ in
             self?.tableView.reloadData()
