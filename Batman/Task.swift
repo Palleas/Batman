@@ -28,8 +28,6 @@ extension Task: Encodable {
             .map { "\($0.0)=" + $0.1.addingPercentEncoding(withAllowedCharacters: .alphanumerics)! }
             .joined(separator: "&")
         
-        print("Payload = \(payload)")
-        
         return payload.data(using: .utf8)
     }
     
@@ -37,6 +35,11 @@ extension Task: Encodable {
 
 struct CreatedTask {
     let id: Int
+    
+    func url() -> URL {
+        return URL(string: "https://app.asana.com/0/0/\(id)")!
+    }
+
 }
 
 extension CreatedTask: Unboxable {

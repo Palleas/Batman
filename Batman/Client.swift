@@ -65,7 +65,7 @@ final class Client {
         return get(.workspaces)
     }
     
-    func create(task: Task) -> SignalProducer<CreatedTask, ClientError> {
+    func create(task: Task) -> SignalProducer<(CreatedTask), ClientError> {
         return create(task, at: .tasks)
     }
     

@@ -56,10 +56,11 @@ extension CreateFlowCoordinator: CreateViewControllerDelegate {
         guard case let .success(title, notes) = Builder.task(from: root.taskContent.text) else { return }
         
         let task = Task(name: title, notes: notes ?? "", projects: [project])
-        client.create(task: task).startWithResult { result in
+        client.create(task: task).observe(on: UIScheduler()).startWithResult { [weak self] result in
             switch result {
             case let .success(createdTask):
-                print("[Create task] Created task = \(createdTask)")
+                let sharing = UIActivityViewController(activityItems: [createdTask.url()], applicationActivities: nil)
+                self?.controller.present(sharing, animated: true, completion: nil)
             case let .failure(error):
                 print("[Create task] Got error = \(error)")
             }
