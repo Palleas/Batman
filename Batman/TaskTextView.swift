@@ -62,7 +62,7 @@ final class TaskTextView: UITextView {
 
         super.init(frame: .zero, textContainer: textContainer)
         
-        textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        textContainerInset = UIEdgeInsets(top: 32, left: 20, bottom: 20, right: 20)
         font = UIFont.btmTaskNameFont()
     }
     
