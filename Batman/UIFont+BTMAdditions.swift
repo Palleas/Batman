@@ -16,7 +16,7 @@ extension UIFont {
 		return UIFont.systemFont(ofSize: 40.0, weight: UIFontWeightBold)
 	}
 
-	class func btmPullToSaveFont() -> UIFont {
+	class func btmTaskNotesFont() -> UIFont {
 		return UIFont.systemFont(ofSize: 40.0, weight: UIFontWeightUltraLight)
 	}
 

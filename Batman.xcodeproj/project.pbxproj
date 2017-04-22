@@ -59,6 +59,7 @@
 		7A35A7AF1EA6C956004746FC /* BlurPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A35A7AE1EA6C956004746FC /* BlurPresentationController.swift */; };
 		7A8A88B41EA1737400093AA8 /* Workspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A88B31EA1737400093AA8 /* Workspace.swift */; };
 		7AD500761EABB07500F0520E /* UIFont+BTMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD500751EABB07500F0520E /* UIFont+BTMAdditions.swift */; };
+		7AD5008A1EABC26900F0520E /* TaskTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD500891EABC26900F0520E /* TaskTextView.swift */; };
 		7AD634C81EA2DA590023DF00 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD634C71EA2DA590023DF00 /* Storage.swift */; };
 		7AE510B61EA8459000403245 /* ProjectsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE510B51EA8459000403245 /* ProjectsHeader.swift */; };
 		83E7817B4F3392B7FD45F066 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F0D3AC648BF1D43D720BD0 /* QuartzCore.framework */; };
@@ -158,6 +159,7 @@
 		7A35A7AE1EA6C956004746FC /* BlurPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurPresentationController.swift; sourceTree = "<group>"; };
 		7A8A88B31EA1737400093AA8 /* Workspace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
 		7AD500751EABB07500F0520E /* UIFont+BTMAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+BTMAdditions.swift"; sourceTree = "<group>"; };
+		7AD500891EABC26900F0520E /* TaskTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTextView.swift; sourceTree = "<group>"; };
 		7AD634C71EA2DA590023DF00 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		7AE510B51EA8459000403245 /* ProjectsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsHeader.swift; sourceTree = "<group>"; };
 		7DFD84FFED69427041BE8B53 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -366,6 +368,7 @@
 			children = (
 				7A35A7AB1EA6C831004746FC /* ProjectCell.swift */,
 				7AE510B51EA8459000403245 /* ProjectsHeader.swift */,
+				7AD500891EABC26900F0520E /* TaskTextView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				7A13594B1E9EBD64006AB737 /* JSONHelper.swift in Sources */,
 				7A1359511E9F0CB1006AB737 /* CreateFlowCoordinator.swift in Sources */,
 				7A0B953F1EA16DD200C8D6FB /* Task.swift in Sources */,
+				7AD5008A1EABC26900F0520E /* TaskTextView.swift in Sources */,
 				7AE510B61EA8459000403245 /* ProjectsHeader.swift in Sources */,
 				7A2690E81EA3FD6700FEBBF8 /* Builder.swift in Sources */,
 				7A1359561E9F0D4B006AB737 /* Storyboards.swift in Sources */,

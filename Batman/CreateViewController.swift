@@ -29,7 +29,8 @@ final class CreateViewController: UIViewController {
     
     weak var delegate: CreateViewControllerDelegate?
     
-    @IBOutlet weak var taskContent: UITextView!
+    let taskContent: UITextView = TaskTextView()
+    
     @IBOutlet weak var projectButton: UIButton!
     @IBOutlet weak var pullToSaveLabel: UILabel! { didSet { pullToSaveLabel.alpha = 0 } }
 
@@ -37,9 +38,25 @@ final class CreateViewController: UIViewController {
     
     fileprivate let currentOffsetY = MutableProperty<CGFloat>(0)
     
+    override func loadView() {
+        super.loadView()
+        
+        view.insertSubview(taskContent, at: 0)
+
+        taskContent.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            taskContent.topAnchor.constraint(equalTo: view.topAnchor),
+            taskContent.leftAnchor.constraint(equalTo: view.leftAnchor),
+            taskContent.rightAnchor.constraint(equalTo: view.rightAnchor),
+            taskContent.bottomAnchor.constraint(equalTo: projectButton.topAnchor, constant: -2)
+        ])
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        (taskContent as UIScrollView).delegate = self
         taskContent.isUserInteractionEnabled = true
         taskContent.alwaysBounceVertical = true
         automaticallyAdjustsScrollViewInsets = false

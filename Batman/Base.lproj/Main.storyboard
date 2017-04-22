@@ -22,17 +22,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Implement super important feature" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sy9-nO-sdE">
-                                <rect key="frame" x="0.0" y="20" width="375" height="597"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="QQk-u0-kyz"/>
-                                </connections>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBf-kT-nMj">
-                                <rect key="frame" x="16" y="627" width="343" height="30"/>
+                                <rect key="frame" x="0.0" y="619" width="375" height="48"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="10" maxX="20" maxY="10"/>
                                 <state key="normal" title="Project &gt;">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -46,25 +39,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UzA-EY-Zpe">
+                                <rect key="frame" x="0.0" y="618" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Hhz-qe-dnf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xBf-kT-nMj" firstAttribute="top" secondItem="sy9-nO-sdE" secondAttribute="bottom" constant="10" id="6dJ-Km-OBd"/>
+                            <constraint firstAttribute="trailing" secondItem="UzA-EY-Zpe" secondAttribute="trailing" id="C8N-Cz-Bp0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AGU-ah-QeL" secondAttribute="trailing" constant="10" id="FyI-C1-mfv"/>
-                            <constraint firstItem="sy9-nO-sdE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GJj-tb-EuI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xBf-kT-nMj" secondAttribute="trailing" id="HRx-Q8-qtT"/>
-                            <constraint firstItem="xBf-kT-nMj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="esr-nR-9jb"/>
+                            <constraint firstItem="xBf-kT-nMj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jyh-iv-TXt"/>
+                            <constraint firstItem="xBf-kT-nMj" firstAttribute="top" secondItem="UzA-EY-Zpe" secondAttribute="bottom" id="WC4-8E-nGv"/>
                             <constraint firstItem="AGU-ah-QeL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="gmm-T8-hP5"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xBf-kT-nMj" secondAttribute="bottom" constant="10" id="i9W-Xi-zvm"/>
-                            <constraint firstItem="sy9-nO-sdE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="m6X-dT-M3Z"/>
-                            <constraint firstAttribute="trailing" secondItem="sy9-nO-sdE" secondAttribute="trailing" id="qjX-Jn-fbt"/>
+                            <constraint firstItem="UzA-EY-Zpe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pH6-FT-h8N"/>
                             <constraint firstItem="AGU-ah-QeL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="rje-ti-aRQ"/>
+                            <constraint firstAttribute="trailing" secondItem="xBf-kT-nMj" secondAttribute="trailing" id="tv5-Gl-36M"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xBf-kT-nMj" secondAttribute="bottom" id="v0G-nG-Ag5"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="projectButton" destination="xBf-kT-nMj" id="EQM-R6-EE8"/>
                         <outlet property="pullToSaveLabel" destination="AGU-ah-QeL" id="ZUH-vk-lsh"/>
-                        <outlet property="taskContent" destination="sy9-nO-sdE" id="LQy-IG-mHK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
