@@ -8,7 +8,7 @@ final class ProjectsHeader: UIView {
         l.numberOfLines = 0
         l.lineBreakMode = .byWordWrapping
         l.textColor = .white
-        l.font = .systemFont(ofSize: 70)
+        l.font = .btmProjectHeaderTitleFont()
         l.translatesAutoresizingMaskIntoConstraints = false
         
         return l
@@ -21,8 +21,8 @@ final class ProjectsHeader: UIView {
         
         NSLayoutConstraint.activate([
             title.centerYAnchor.constraint(equalTo: centerYAnchor),
-            title.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
-            title.rightAnchor.constraint(equalTo: rightAnchor, constant: 10)
+            title.leftAnchor.constraint(equalTo: leftAnchor, constant: 25),
+            title.rightAnchor.constraint(equalTo: rightAnchor, constant: 25)
         ])
     }
     

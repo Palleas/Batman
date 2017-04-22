@@ -18,6 +18,7 @@ final class ProjectsViewController: UITableViewController {
         view.backgroundColor = .clear
         tableView.backgroundColor = .clear
         
+        tableView.separatorColor = .white
         tableView.tableHeaderView = ProjectsHeader(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: 200)))
         tableView.tableFooterView = UIView()
         

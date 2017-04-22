@@ -58,6 +58,7 @@
 		7A35A7AC1EA6C831004746FC /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A35A7AB1EA6C831004746FC /* ProjectCell.swift */; };
 		7A35A7AF1EA6C956004746FC /* BlurPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A35A7AE1EA6C956004746FC /* BlurPresentationController.swift */; };
 		7A8A88B41EA1737400093AA8 /* Workspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A88B31EA1737400093AA8 /* Workspace.swift */; };
+		7AD500761EABB07500F0520E /* UIFont+BTMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD500751EABB07500F0520E /* UIFont+BTMAdditions.swift */; };
 		7AD634C81EA2DA590023DF00 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD634C71EA2DA590023DF00 /* Storage.swift */; };
 		7AE510B61EA8459000403245 /* ProjectsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE510B51EA8459000403245 /* ProjectsHeader.swift */; };
 		83E7817B4F3392B7FD45F066 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F0D3AC648BF1D43D720BD0 /* QuartzCore.framework */; };
@@ -156,6 +157,7 @@
 		7A35A7AB1EA6C831004746FC /* ProjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		7A35A7AE1EA6C956004746FC /* BlurPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurPresentationController.swift; sourceTree = "<group>"; };
 		7A8A88B31EA1737400093AA8 /* Workspace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
+		7AD500751EABB07500F0520E /* UIFont+BTMAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+BTMAdditions.swift"; sourceTree = "<group>"; };
 		7AD634C71EA2DA590023DF00 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		7AE510B51EA8459000403245 /* ProjectsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsHeader.swift; sourceTree = "<group>"; };
 		7DFD84FFED69427041BE8B53 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -231,6 +233,7 @@
 		7A1359581E9F0D53006AB737 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7AD500751EABB07500F0520E /* UIFont+BTMAdditions.swift */,
 				7A32BA641E9E5407005882A0 /* Main.storyboard */,
 				7A32BA671E9E5407005882A0 /* Assets.xcassets */,
 				7A32BA691E9E5407005882A0 /* LaunchScreen.storyboard */,
@@ -549,6 +552,7 @@
 				7A1359471E9EB9BC006AB737 /* Project.swift in Sources */,
 				7A2690F11EA4594700FEBBF8 /* AutoList.generated.swift in Sources */,
 				7A2691031EA52B5D00FEBBF8 /* Sourcery.swift in Sources */,
+				7AD500761EABB07500F0520E /* UIFont+BTMAdditions.swift in Sources */,
 				7A2690F41EA529FF00FEBBF8 /* ProjectColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

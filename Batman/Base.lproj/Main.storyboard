@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -95,14 +95,14 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoU-xx-FOV">
-                                            <rect key="frame" x="20" y="11" width="337" height="21"/>
+                                            <rect key="frame" x="25" y="11" width="332" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="NoU-xx-FOV" firstAttribute="leading" secondItem="xNF-vC-g2u" secondAttribute="trailing" constant="10" id="GtT-c5-yI9"/>
+                                        <constraint firstItem="NoU-xx-FOV" firstAttribute="leading" secondItem="xNF-vC-g2u" secondAttribute="trailing" constant="15" id="GtT-c5-yI9"/>
                                         <constraint firstItem="xNF-vC-g2u" firstAttribute="leading" secondItem="h9e-6g-n4q" secondAttribute="leading" id="cow-Kx-fLb"/>
                                         <constraint firstAttribute="bottom" secondItem="xNF-vC-g2u" secondAttribute="bottom" id="rd3-kZ-5Fg"/>
                                         <constraint firstItem="NoU-xx-FOV" firstAttribute="centerY" secondItem="h9e-6g-n4q" secondAttribute="centerY" id="t65-jf-Ufs"/>
