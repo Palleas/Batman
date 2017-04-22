@@ -81,10 +81,14 @@ extension CreateViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         currentOffsetY.swap(scrollView.contentOffset.y)
         
+        guard scrollView.contentOffset.y < 0 else { return }
+        
         pullToSaveLabel.alpha = min(abs(scrollView.contentOffset.y), CreateViewController.alphaThreshold) / CreateViewController.alphaThreshold
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        guard scrollView.contentOffset.y < 0 else { return }
+
         if abs(scrollView.contentOffset.y) >= CreateViewController.savingThreshold {
             delegate?.didReleaseToSave()
         }
