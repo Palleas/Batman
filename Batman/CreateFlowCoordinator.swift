@@ -74,8 +74,6 @@ extension CreateFlowCoordinator: CreateViewControllerDelegate {
         
         controller.present(projectCoordinator.controller, animated: true, completion: nil)
         
-//        project <~ projectCoordinator.selected
-        
         projectCoordinator.selected.producer.skipNil().startWithValues { [weak self] project in
             self?.project.swap(project)
             self?.controller.dismiss(animated: true, completion: nil)
