@@ -75,6 +75,10 @@ final class CreateViewController: UIViewController {
     @IBAction func didTapProject(_ sender: Any) {
         delegate?.didTapSelectProject()
     }
+    
+    func reset() {
+        taskContent.text = ""
+    }
 }
 
 extension CreateViewController: UIScrollViewDelegate {

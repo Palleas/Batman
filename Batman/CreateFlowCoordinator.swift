@@ -60,6 +60,10 @@ extension CreateFlowCoordinator: CreateViewControllerDelegate {
             switch result {
             case let .success(createdTask):
                 let sharing = UIActivityViewController(activityItems: [createdTask.url()], applicationActivities: nil)
+                sharing.completionWithItemsHandler = { activity, success, items, error in
+                    self?.root.reset()
+                }
+                
                 self?.controller.present(sharing, animated: true, completion: nil)
             case let .failure(error):
                 print("[Create task] Got error = \(error)")
