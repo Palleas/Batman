@@ -3,9 +3,6 @@ import Unbox
 import Result
 
 func decode<T: Unboxable>(from data: Data) -> Result<T, UnboxError> {
-//    let debug = String(data: data, encoding: .utf8)!
-//    print("Debug = \(debug)")
-
     do {
         let result: [String: T] = try unbox(data: data)
         return .success(result["data"]!)
@@ -15,9 +12,6 @@ func decode<T: Unboxable>(from data: Data) -> Result<T, UnboxError> {
 }
 
 func decode<T: Unboxable>(from data: Data) -> Result<[T], UnboxError> {
-//    let debug = String(data: data, encoding: .utf8)!
-//    print("Debug = \(debug)")
-
     do {
         let result: [T] = try unbox(data: data, atKeyPath: "data")
         return .success(result)
