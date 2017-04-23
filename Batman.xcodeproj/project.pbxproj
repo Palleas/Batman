@@ -139,8 +139,8 @@
 		7A2690E71EA3FD6700FEBBF8 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		7A2690E91EA3FDE700FEBBF8 /* BuilderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuilderSpec.swift; sourceTree = "<group>"; };
 		7A2690EB1EA3FEBB00FEBBF8 /* fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fixtures; sourceTree = "<group>"; };
-		7A2690EE1EA4045F00FEBBF8 /* AutoEquatable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoEquatable.generated.swift; path = Batman/AutoEquatable.generated.swift; sourceTree = "<group>"; };
-		7A2690F01EA4594700FEBBF8 /* AutoList.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoList.generated.swift; path = Batman/AutoList.generated.swift; sourceTree = "<group>"; };
+		7A2690EE1EA4045F00FEBBF8 /* AutoEquatable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoEquatable.generated.swift; path = AutoEquatable.generated.swift; sourceTree = "<group>"; };
+		7A2690F01EA4594700FEBBF8 /* AutoList.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoList.generated.swift; path = AutoList.generated.swift; sourceTree = "<group>"; };
 		7A2690F31EA529FF00FEBBF8 /* ProjectColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectColor.swift; sourceTree = "<group>"; };
 		7A2690F91EA52A3900FEBBF8 /* ColorDump */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ColorDump; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2690FB1EA52A3900FEBBF8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -235,14 +235,15 @@
 		7A1359581E9F0D53006AB737 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7AD500751EABB07500F0520E /* UIFont+BTMAdditions.swift */,
-				7A32BA641E9E5407005882A0 /* Main.storyboard */,
+				7A1359551E9F0D4B006AB737 /* Assets.swift */,
 				7A32BA671E9E5407005882A0 /* Assets.xcassets */,
 				7A32BA691E9E5407005882A0 /* LaunchScreen.storyboard */,
+				7A32BA641E9E5407005882A0 /* Main.storyboard */,
 				7A1359541E9F0D4B006AB737 /* Storyboards.swift */,
-				7A1359551E9F0D4B006AB737 /* Assets.swift */,
+				7AD500751EABB07500F0520E /* UIFont+BTMAdditions.swift */,
 			);
 			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		7A1B4BCF1E9F170100CE507A /* Domain */ = {
@@ -250,36 +251,39 @@
 			children = (
 				7A2690E71EA3FD6700FEBBF8 /* Builder.swift */,
 				7A32BA721E9E5418005882A0 /* Client.swift */,
-				7A1359481E9EB9DD006AB737 /* Token.swift */,
 				7AD634C71EA2DA590023DF00 /* Storage.swift */,
+				7A1359481E9EB9DD006AB737 /* Token.swift */,
 			);
 			name = Domain;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		7A1B4BD01E9F170700CE507A /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7A1B4BCC1E9F124B00CE507A /* ProjectsViewController.swift */,
 				7A32BA621E9E5407005882A0 /* CreateViewController.swift */,
+				7A1B4BCC1E9F124B00CE507A /* ProjectsViewController.swift */,
 			);
 			name = "View Controllers";
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		7A1B4BD11E9F171100CE507A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				7A13594A1E9EBD64006AB737 /* JSONHelper.swift */,
 				7A0802D31E9F9C8E007E9EBC /* Credentials.swift */,
+				7A13594A1E9EBD64006AB737 /* JSONHelper.swift */,
 			);
 			name = Utils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		7A2690D51EA3E6AB00FEBBF8 /* BatmanTests */ = {
 			isa = PBXGroup;
 			children = (
-				7A2690EB1EA3FEBB00FEBBF8 /* fixtures */,
-				7A2690D81EA3E6AB00FEBBF8 /* Info.plist */,
 				7A2690E91EA3FDE700FEBBF8 /* BuilderSpec.swift */,
+				7A2690D81EA3E6AB00FEBBF8 /* Info.plist */,
+				7A2690EB1EA3FEBB00FEBBF8 /* fixtures */,
 			);
 			path = BatmanTests;
 			sourceTree = "<group>";
@@ -287,12 +291,13 @@
 		7A2690F21EA529EB00FEBBF8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				7A2690EE1EA4045F00FEBBF8 /* AutoEquatable.generated.swift */,
+				7A2690F01EA4594700FEBBF8 /* AutoList.generated.swift */,
 				7A2690F31EA529FF00FEBBF8 /* ProjectColor.swift */,
 				7A2691021EA52B5D00FEBBF8 /* Sourcery.swift */,
-				7A2690F01EA4594700FEBBF8 /* AutoList.generated.swift */,
-				7A2690EE1EA4045F00FEBBF8 /* AutoEquatable.generated.swift */,
 			);
 			name = Common;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		7A2690FA1EA52A3900FEBBF8 /* ColorDump */ = {
@@ -306,12 +311,12 @@
 		7A32BA541E9E5407005882A0 = {
 			isa = PBXGroup;
 			children = (
-				7A2690F21EA529EB00FEBBF8 /* Common */,
 				7A32BA5F1E9E5407005882A0 /* Batman */,
 				7A2690D51EA3E6AB00FEBBF8 /* BatmanTests */,
 				7A2690FA1EA52A3900FEBBF8 /* ColorDump */,
-				7A32BA5E1E9E5407005882A0 /* Products */,
+				7A2690F21EA529EB00FEBBF8 /* Common */,
 				7A1359431E9EB622006AB737 /* Frameworks */,
+				7A32BA5E1E9E5407005882A0 /* Products */,
 				73875FD4949066BD82478180 /* Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
@@ -329,16 +334,16 @@
 		7A32BA5F1E9E5407005882A0 /* Batman */ = {
 			isa = PBXGroup;
 			children = (
-				7A35A7AD1EA6C948004746FC /* Transition */,
-				7A35A7AA1EA6C824004746FC /* Views */,
-				7A32BA601E9E5407005882A0 /* AppDelegate.swift */,
 				7A1B4BCF1E9F170100CE507A /* Domain */,
 				7A35A7A81EA6C751004746FC /* Flow Coordinators */,
-				7A32BA6C1E9E5407005882A0 /* Info.plist */,
 				7A35A7A91EA6C77F004746FC /* Model */,
 				7A1359581E9F0D53006AB737 /* Resources */,
+				7A35A7AD1EA6C948004746FC /* Transition */,
 				7A1B4BD11E9F171100CE507A /* Utils */,
 				7A1B4BD01E9F170700CE507A /* View Controllers */,
+				7A35A7AA1EA6C824004746FC /* Views */,
+				7A32BA601E9E5407005882A0 /* AppDelegate.swift */,
+				7A32BA6C1E9E5407005882A0 /* Info.plist */,
 			);
 			path = Batman;
 			sourceTree = "<group>";
@@ -351,6 +356,7 @@
 				7A1359521E9F0CC1006AB737 /* SelectProjectFlowCoordinator.swift */,
 			);
 			name = "Flow Coordinators";
+			path = "Flow Coordinators";
 			sourceTree = "<group>";
 		};
 		7A35A7A91EA6C77F004746FC /* Model */ = {
@@ -361,6 +367,7 @@
 				7A8A88B31EA1737400093AA8 /* Workspace.swift */,
 			);
 			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7A35A7AA1EA6C824004746FC /* Views */ = {
@@ -371,6 +378,7 @@
 				7AD500891EABC26900F0520E /* TaskTextView.swift */,
 			);
 			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7A35A7AD1EA6C948004746FC /* Transition */ = {
@@ -379,6 +387,7 @@
 				7A35A7AE1EA6C956004746FC /* BlurPresentationController.swift */,
 			);
 			name = Transition;
+			path = Transition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,6 +587,7 @@
 				7A32BA651E9E5407005882A0 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		7A32BA691E9E5407005882A0 /* LaunchScreen.storyboard */ = {
@@ -586,6 +596,7 @@
 				7A32BA6A1E9E5407005882A0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
