@@ -1,5 +1,6 @@
 sources:
     - Batman
+    - Common
 templates:
     - Templates
-output: Batman
+output: Common

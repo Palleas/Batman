@@ -17,5 +17,5 @@ dependencies:
 	$(BREW) install blender/homebrew-tap/rome
 
 rebuild-assets:
-	$(SWIFTGEN) images -t dot-syntax-swift3 -o Batman/Assets.swift Batman/Assets.xcassets
-	$(SWIFTGEN) storyboards -t swift3 -o Batman/Storyboards.swift Batman/Base.lproj/Main.storyboard
+	$(SWIFTGEN) images -t dot-syntax-swift3 --param module=Batman -o Batman/Resources/Assets.swift Batman/Resources/Assets.xcassets
+	$(SWIFTGEN) storyboards -t swift3 --param module=Batman -o Batman/Resources/Storyboards.swift Batman/Resources/Base.lproj/Main.storyboard

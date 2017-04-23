@@ -139,8 +139,8 @@
 		7A2690E71EA3FD6700FEBBF8 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		7A2690E91EA3FDE700FEBBF8 /* BuilderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuilderSpec.swift; sourceTree = "<group>"; };
 		7A2690EB1EA3FEBB00FEBBF8 /* fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fixtures; sourceTree = "<group>"; };
-		7A2690EE1EA4045F00FEBBF8 /* AutoEquatable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoEquatable.generated.swift; path = AutoEquatable.generated.swift; sourceTree = "<group>"; };
-		7A2690F01EA4594700FEBBF8 /* AutoList.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoList.generated.swift; path = AutoList.generated.swift; sourceTree = "<group>"; };
+		7A2690EE1EA4045F00FEBBF8 /* AutoEquatable.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoEquatable.generated.swift; sourceTree = "<group>"; };
+		7A2690F01EA4594700FEBBF8 /* AutoList.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoList.generated.swift; sourceTree = "<group>"; };
 		7A2690F31EA529FF00FEBBF8 /* ProjectColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectColor.swift; sourceTree = "<group>"; };
 		7A2690F91EA52A3900FEBBF8 /* ColorDump */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ColorDump; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2690FB1EA52A3900FEBBF8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -242,7 +242,6 @@
 				7A1359541E9F0D4B006AB737 /* Storyboards.swift */,
 				7AD500751EABB07500F0520E /* UIFont+BTMAdditions.swift */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};

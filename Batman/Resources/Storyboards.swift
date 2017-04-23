@@ -2,7 +2,6 @@
 
 import Foundation
 import UIKit
-import Batman
 
 // swiftlint:disable file_length
 // swiftlint:disable line_length
