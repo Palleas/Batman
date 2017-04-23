@@ -13,9 +13,10 @@ Using [buddybuild](http://buddybuild.com):
 
 Locally
 
-1. Clone this repo & open it in Xcode
-2. Add a **ASANA_TOKEN** environment variable in the Batman scheme with [your yoken](https://asana.com/developers/documentation/getting-started/auth#personal-access-token)
-3. Run the app
+1. Clone this repo
+2. `make update` 
+3. Add a **ASANA_TOKEN** environment variable in the Batman scheme with [your token](https://asana.com/developers/documentation/getting-started/auth#personal-access-token)
+4. Run the app
 
 ## Why
 
