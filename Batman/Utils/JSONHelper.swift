@@ -26,3 +26,19 @@ protocol Encodable {
     func encode() -> Data?
     
 }
+
+protocol Boxable {
+    
+    var encoded: [AnyHashable: Any] { get }
+    
+}
+
+extension Array where Element: Boxable {
+    
+    func encode() throws -> Data {
+        let encoded = map { $0.encoded }
+        return try JSONSerialization.data(withJSONObject: encoded, options: .prettyPrinted)
+    }
+    
+}
+

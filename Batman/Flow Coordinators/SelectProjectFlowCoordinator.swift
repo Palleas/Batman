@@ -12,19 +12,19 @@ final class SelectProjectFlowCoordinator: Coordinator {
         return controller
     }()
     
-    private let client: Client
+    private let projects: ProjectsController
     
     let selected = MutableProperty<Project?>(nil)
     
-    init(client: Client) {
-        self.client = client
+    init(projects: ProjectsController) {
+        self.projects = projects
     }
     
     func start() {
-        let projects = client.projects()
+        let fetched = projects.fetch()
             .flatMapError { _ in SignalProducer<[Project], NoError>.empty }
         
-        controller.projects <~ projects
+        controller.projects <~ fetched
         controller.delegate = self
     }
 }

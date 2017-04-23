@@ -34,5 +34,16 @@ internal func == (lhs: Builder.BuilderError, rhs: Builder.BuilderError) -> Bool 
     default: return false
     }
 }
+// MARK: - ProjectsController.ProjectsError AutoEquatable
+extension ProjectsController.ProjectsError: Equatable {}
+internal func == (lhs: ProjectsController.ProjectsError, rhs: ProjectsController.ProjectsError) -> Bool {
+    switch (lhs, rhs) {
+     case (.noCache, .noCache): 
+         return true 
+    case (.fetchingError(let lhs), .fetchingError(let rhs)): 
+        return lhs == rhs
+    default: return false
+    }
+}
 
 // MARK: -

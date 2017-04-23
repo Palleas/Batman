@@ -72,7 +72,7 @@ extension CreateFlowCoordinator: CreateViewControllerDelegate {
     }
 
     func didTapSelectProject() {
-        let projectCoordinator = SelectProjectFlowCoordinator(client: client)
+        let projectCoordinator = SelectProjectFlowCoordinator(projects: ProjectsController(client: client))
         projectCoordinator.start()
         
         self.children.append(projectCoordinator)
