@@ -2,6 +2,9 @@
 
 Batman is an iOS app to create tasks in [Asana](http://asana.com).
 
+![](Assets/01-select-project.png)
+![](Assets/02-create-task.png)
+
 ## Installation
 
 Using [buddybuild](http://buddybuild.com):
