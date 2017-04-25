@@ -1,3 +1,4 @@
 github "reactivecocoa/reactiveswift"
 github "reactivecocoa/reactivecocoa"
 github "johnsundell/unbox"
+github "AliSoftware/OHHTTPStubs"

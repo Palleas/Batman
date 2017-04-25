@@ -33,5 +33,4 @@ extension Project: Boxable {
     }
 }
 
-extension ProjectColor: UnboxableEnum {}
-
+extension Project: AutoEquatable {}

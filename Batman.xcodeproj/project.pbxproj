@@ -63,6 +63,9 @@
 		7AD634C81EA2DA590023DF00 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD634C71EA2DA590023DF00 /* Storage.swift */; };
 		7AE510B61EA8459000403245 /* ProjectsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE510B51EA8459000403245 /* ProjectsHeader.swift */; };
 		7AEEFE691EAC549D00459E3B /* ProjectsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEEFE681EAC549D00459E3B /* ProjectsController.swift */; };
+		7AEEFE6B1EAD126B00459E3B /* ProjectsControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEEFE6A1EAD126B00459E3B /* ProjectsControllerSpec.swift */; };
+		7AEEFE6E1EAD2F7C00459E3B /* OHHTTPStubs.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7AEEFE6C1EAD2F6D00459E3B /* OHHTTPStubs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7AEEFE6F1EAD2F8500459E3B /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEEFE6C1EAD2F6D00459E3B /* OHHTTPStubs.framework */; };
 		83E7817B4F3392B7FD45F066 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F0D3AC648BF1D43D720BD0 /* QuartzCore.framework */; };
 		BF93F6CD95FAD76497EA9169 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C522B4139BF1116DDAA71B8C /* CoreVideo.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +87,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7AEEFE6E1EAD2F7C00459E3B /* OHHTTPStubs.framework in CopyFiles */,
 				7A2690E31EA3FCA200FEBBF8 /* Nimble.framework in CopyFiles */,
 				7A2690E41EA3FCA200FEBBF8 /* Quick.framework in CopyFiles */,
 			);
@@ -164,6 +168,8 @@
 		7AD634C71EA2DA590023DF00 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		7AE510B51EA8459000403245 /* ProjectsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsHeader.swift; sourceTree = "<group>"; };
 		7AEEFE681EAC549D00459E3B /* ProjectsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsController.swift; sourceTree = "<group>"; };
+		7AEEFE6A1EAD126B00459E3B /* ProjectsControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsControllerSpec.swift; sourceTree = "<group>"; };
+		7AEEFE6C1EAD2F6D00459E3B /* OHHTTPStubs.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OHHTTPStubs.framework; path = Carthage/Build/iOS/OHHTTPStubs.framework; sourceTree = "<group>"; };
 		7DFD84FFED69427041BE8B53 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		ACB5B2EAF73D31321B66272A /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		C522B4139BF1116DDAA71B8C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -178,6 +184,7 @@
 			files = (
 				7A2690E01EA3FC9400FEBBF8 /* Nimble.framework in Frameworks */,
 				7A2690E11EA3FC9400FEBBF8 /* Quick.framework in Frameworks */,
+				7AEEFE6F1EAD2F8500459E3B /* OHHTTPStubs.framework in Frameworks */,
 				7A2690ED1EA4007900FEBBF8 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +222,7 @@
 		7A1359431E9EB622006AB737 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7AEEFE6C1EAD2F6D00459E3B /* OHHTTPStubs.framework */,
 				7A2690DE1EA3FC9400FEBBF8 /* Nimble.framework */,
 				7A2690DF1EA3FC9400FEBBF8 /* Quick.framework */,
 				7A1B4BD21E9F190400CE507A /* ReactiveCocoa.framework */,
@@ -283,6 +291,7 @@
 				7A2690E91EA3FDE700FEBBF8 /* BuilderSpec.swift */,
 				7A2690D81EA3E6AB00FEBBF8 /* Info.plist */,
 				7A2690EB1EA3FEBB00FEBBF8 /* fixtures */,
+				7AEEFE6A1EAD126B00459E3B /* ProjectsControllerSpec.swift */,
 			);
 			path = BatmanTests;
 			sourceTree = "<group>";
@@ -516,6 +525,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AEEFE6B1EAD126B00459E3B /* ProjectsControllerSpec.swift in Sources */,
 				7A2690EA1EA3FDE700FEBBF8 /* BuilderSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

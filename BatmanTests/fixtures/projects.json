@@ -1,0 +1,18 @@
+{
+    "data": [
+        {
+            "id": 567897654345678,
+            "name": "Backlog",
+            "color": "dark-purple"
+        },
+        {
+            "id": 789098765432,
+            "name": "Help",
+            "color": "dark-warm-gray"
+        },
+        {
+            "id": 1234567890,
+            "name": "Untriaged Bugs"
+        }
+    ]
+}

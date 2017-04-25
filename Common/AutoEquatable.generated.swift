@@ -23,6 +23,14 @@ fileprivate func compareArrays<T>(lhs: [T], rhs: [T], compare: (_ lhs: T, _ rhs:
 }
 
 // MARK: - AutoEquatable for classes, protocols, structs
+// MARK: - Project AutoEquatable
+extension Project: Equatable {} 
+internal func == (lhs: Project, rhs: Project) -> Bool {
+    guard lhs.id == rhs.id else { return false }
+    guard lhs.name == rhs.name else { return false }
+    guard compareOptionals(lhs: lhs.color, rhs: rhs.color, compare: ==) else { return false }
+    return true
+}
 
 // MARK: - AutoEquatable for Enums
 // MARK: - Builder.BuilderError AutoEquatable

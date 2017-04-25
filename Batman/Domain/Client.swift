@@ -45,7 +45,7 @@ final class Client {
         case decodingError
     }
     
-    private let session: URLSession
+    let session: URLSession
     
     init(token: Token) {
         let config = URLSessionConfiguration.default

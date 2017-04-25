@@ -12,14 +12,13 @@ final class ProjectsController {
     
     private let client: Client
     
-    private lazy var store: URL = {
-        // So many force-unwrap
-        let cache = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first
-        return URL(fileURLWithPath: cache!.appending("/projects.json"))
-    }()
+    let selectedProject = MutableProperty<Project?>(nil)
     
-    init(client: Client) {
+    private let projectsPath: URL
+
+    init(client: Client, cacheDirectory: URL) {
         self.client = client
+        self.projectsPath = cacheDirectory.appendingPathComponent("projects.json")
     }
     
     typealias Projects = SignalProducer<[Project], ProjectsError>
@@ -36,19 +35,20 @@ final class ProjectsController {
     
     func fetchFromCache() -> Projects {
         return SignalProducer<Data, ProjectsError> { sink, _ in
-            guard FileManager.default.fileExists(atPath: self.store.path) else {
+            guard FileManager.default.fileExists(atPath: self.projectsPath.path) else {
                 sink.send(error: .noCache)
                 return
             }
             
             do {
                 // TODO: Expiration date
-                sink.send(value: try Data(contentsOf: self.store))
+                sink.send(value: try Data(contentsOf: self.projectsPath))
+                sink.sendCompleted()
             } catch {
                 sink.send(error: .noCache)
             }
         }
-        .attemptMap { return decode(from: $0).mapError { _ in ProjectsError.noCache } }
+            .attemptMap { return decode(from: $0).mapError { print("error \($0)"); return ProjectsError.noCache } }
     }
     
     func fetchFromRemote() -> Projects {
@@ -67,8 +67,8 @@ final class ProjectsController {
             
             do {
                 let encoded = try projects.encode()
-                try encoded.write(to: self.store)
-                print("Cached to \(self.store)")
+                try encoded.write(to: self.projectsPath)
+                print("Cached to \(self.projectsPath)")
             } catch {
                 print("Unable to cache projects")
             }

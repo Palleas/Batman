@@ -10,7 +10,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BuddyBuildSDK.setup()
         
         let token = Token(value: keyOrProcessEnv("ASANA_TOKEN"))
-        self.createFlow = CreateFlowCoordinator(client: Client(token: token))
+        let client = Client(token: token)
+        self.createFlow = CreateFlowCoordinator(client: client)
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.makeKeyAndVisible()
@@ -19,8 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.createFlow.start()
 
+        
+        
         return true
     }
 
 }
-

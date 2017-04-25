@@ -8,6 +8,8 @@ import Foundation
     public typealias Color = NSColor
 #endif
 
+import Unbox
+
 extension Color {
     internal convenience init(hexColor: String) {
         precondition(hexColor.characters.count == 6)
@@ -87,3 +89,5 @@ extension ProjectColor {
         }
     }
 }
+
+extension ProjectColor: UnboxableEnum {}

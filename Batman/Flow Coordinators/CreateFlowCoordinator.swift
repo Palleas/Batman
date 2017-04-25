@@ -72,7 +72,8 @@ extension CreateFlowCoordinator: CreateViewControllerDelegate {
     }
 
     func didTapSelectProject() {
-        let projectCoordinator = SelectProjectFlowCoordinator(projects: ProjectsController(client: client))
+        let cacheDirectory = URL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first!)
+        let projectCoordinator = SelectProjectFlowCoordinator(projects: ProjectsController(client: client, cacheDirectory: cacheDirectory))
         projectCoordinator.start()
         
         self.children.append(projectCoordinator)

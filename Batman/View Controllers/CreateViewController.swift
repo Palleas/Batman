@@ -8,6 +8,14 @@ protocol CreateViewControllerDelegate: class {
     func didReleaseToSave()
 }
 
+final class CreateViewModel {
+    
+    var tint = MutableProperty<UIColor?>(nil)
+    
+    var projectName = MutableProperty<String?>(nil)
+    
+}
+
 final class CreateViewController: UIViewController {
 
     enum State {
