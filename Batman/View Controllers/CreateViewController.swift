@@ -42,6 +42,7 @@ final class CreateViewController: UIViewController {
 
             UIView.animate(withDuration: infos.1, delay: 0, options: infos.2, animations: {
                 self.bottomConstant.constant = infos.0
+                self.taskContent.contentInset = UIEdgeInsetsMake(0, 0, infos.0, 0)
                 self.view.layoutIfNeeded()
             }, completion: nil)
 
@@ -52,6 +53,7 @@ final class CreateViewController: UIViewController {
             
             UIView.animate(withDuration: infos.1, delay: 0, options: infos.2, animations: {
                 self.bottomConstant.constant = 0
+                self.taskContent.contentInset = .zero
                 self.view.layoutIfNeeded()
             }, completion: nil)
         }
