@@ -27,13 +27,9 @@ final class CreateFlowCoordinator: Coordinator {
     
     func start() {
         root.delegate = self
-        _ = root.view
         
-        let backgroundProducer = project.map { $0?.color?.raw ?? .white }
-        root.taskContent.reactive.backgroundColor <~ backgroundProducer
-        root.view.reactive.backgroundColor <~ backgroundProducer
-
-        root.projectButton.reactive.title <~ project.map { $0?.name ?? "No-project" }
+        root.tint <~ project.map { $0?.color?.raw ?? .white }
+        root.projectName <~ project.map { $0?.name ?? "Select a project" }
         
         controller.viewControllers = [root]
         
@@ -50,7 +46,7 @@ final class CreateFlowCoordinator: Coordinator {
 }
 
 extension CreateFlowCoordinator: CreateViewControllerDelegate {
-    func didReleaseToSave() {
+    func didTapCreate() {
         guard let project = project.value else { return }
         
         guard case let .success(title, notes) = Builder.task(from: root.taskContent.text) else { return }

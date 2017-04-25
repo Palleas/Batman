@@ -22,47 +22,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBf-kT-nMj">
-                                <rect key="frame" x="0.0" y="619" width="375" height="48"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="10" maxX="20" maxY="10"/>
-                                <state key="normal" title="Project &gt;">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="didTapProject:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oay-la-Zad"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pull to save..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGU-ah-QeL">
-                                <rect key="frame" x="26" y="30" width="323" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UzA-EY-Zpe">
-                                <rect key="frame" x="0.0" y="618" width="375" height="1"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="poe-FC-mKC">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="Hhz-qe-dnf"/>
+                                    <constraint firstAttribute="height" constant="44" id="OGx-WQ-p4V"/>
                                 </constraints>
-                            </view>
+                                <connections>
+                                    <segue destination="tnS-uF-Z14" kind="embed" identifier="toolbar" id="9tM-Xt-dTv"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="UzA-EY-Zpe" secondAttribute="trailing" id="C8N-Cz-Bp0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="AGU-ah-QeL" secondAttribute="trailing" constant="10" id="FyI-C1-mfv"/>
-                            <constraint firstItem="xBf-kT-nMj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jyh-iv-TXt"/>
-                            <constraint firstItem="xBf-kT-nMj" firstAttribute="top" secondItem="UzA-EY-Zpe" secondAttribute="bottom" id="WC4-8E-nGv"/>
-                            <constraint firstItem="AGU-ah-QeL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="gmm-T8-hP5"/>
-                            <constraint firstItem="UzA-EY-Zpe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pH6-FT-h8N"/>
-                            <constraint firstItem="AGU-ah-QeL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="rje-ti-aRQ"/>
-                            <constraint firstAttribute="trailing" secondItem="xBf-kT-nMj" secondAttribute="trailing" id="tv5-Gl-36M"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xBf-kT-nMj" secondAttribute="bottom" id="v0G-nG-Ag5"/>
+                            <constraint firstItem="poe-FC-mKC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="08R-fA-7YK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="poe-FC-mKC" secondAttribute="bottom" id="UaU-i1-SAp"/>
+                            <constraint firstAttribute="trailing" secondItem="poe-FC-mKC" secondAttribute="trailing" id="wIA-B2-pna"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="projectButton" destination="xBf-kT-nMj" id="EQM-R6-EE8"/>
-                        <outlet property="pullToSaveLabel" destination="AGU-ah-QeL" id="ZUH-vk-lsh"/>
+                        <outlet property="bottomConstant" destination="UaU-i1-SAp" id="qte-0O-5cB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -123,6 +101,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isq-P2-DcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="980" y="38"/>
+        </scene>
+        <!--Toolbar View Controller-->
+        <scene sceneID="KPZ-Da-1Dm">
+            <objects>
+                <viewController id="tnS-uF-Z14" customClass="ToolbarViewController" customModule="Batman" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d8a-jg-Obv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSl-e9-fiL">
+                                <rect key="frame" x="312" y="7" width="50" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Create"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVh-Rg-hrS">
+                                <rect key="frame" x="134.5" y="7" width="106" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <state key="normal" title="Select a project"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lVh-Rg-hrS" firstAttribute="centerX" secondItem="d8a-jg-Obv" secondAttribute="centerX" id="05w-H5-v3r"/>
+                            <constraint firstItem="lVh-Rg-hrS" firstAttribute="centerY" secondItem="d8a-jg-Obv" secondAttribute="centerY" id="7MT-KT-8IM"/>
+                            <constraint firstItem="FSl-e9-fiL" firstAttribute="centerY" secondItem="d8a-jg-Obv" secondAttribute="centerY" id="UUx-gd-C3W"/>
+                            <constraint firstAttribute="trailing" secondItem="FSl-e9-fiL" secondAttribute="trailing" constant="13" id="rmE-PB-dbf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="createTask" destination="FSl-e9-fiL" id="03U-a9-EMC"/>
+                        <outlet property="selectProject" destination="lVh-Rg-hrS" id="1Pn-gw-FaV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4o-Ve-O4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33" y="502"/>
         </scene>
     </scenes>
 </document>

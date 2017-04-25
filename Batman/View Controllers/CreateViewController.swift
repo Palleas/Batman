@@ -5,50 +5,26 @@ import Result
 
 protocol CreateViewControllerDelegate: class {
     func didTapSelectProject()
-    func didReleaseToSave()
-}
-
-final class CreateViewModel {
-    
-    var tint = MutableProperty<UIColor?>(nil)
-    
-    var projectName = MutableProperty<String?>(nil)
-    
+    func didTapCreate()
 }
 
 final class CreateViewController: UIViewController {
 
-    enum State {
-        case normal
-        case saving
-        case saved
-        
-        var title: String {
-            switch self {
-            case .normal: return "Pull to save"
-            case .saving: return "Saving..."
-            case .saved: return "Saved!"
-            }
-        }
-    }
-    
-    static let alphaThreshold = CGFloat(100)
-    static let savingThreshold = CGFloat(150)
-    
     weak var delegate: CreateViewControllerDelegate?
     
     let taskContent: UITextView = TaskTextView()
     
-    @IBOutlet weak var projectButton: UIButton!
-    @IBOutlet weak var pullToSaveLabel: UILabel! { didSet { pullToSaveLabel.alpha = 0 } }
-
-    let currentState = MutableProperty<State>(.normal)
+    let tint = MutableProperty(UIColor.red)
     
-    fileprivate let currentOffsetY = MutableProperty<CGFloat>(0)
+    let projectName = MutableProperty("Select a project")
+
+    @IBOutlet weak var bottomConstant: NSLayoutConstraint!
     
     override func loadView() {
         super.loadView()
         
+        automaticallyAdjustsScrollViewInsets = false
+
         view.insertSubview(taskContent, at: 0)
 
         taskContent.translatesAutoresizingMaskIntoConstraints = false
@@ -57,27 +33,28 @@ final class CreateViewController: UIViewController {
             taskContent.topAnchor.constraint(equalTo: view.topAnchor),
             taskContent.leftAnchor.constraint(equalTo: view.leftAnchor),
             taskContent.rightAnchor.constraint(equalTo: view.rightAnchor),
-            taskContent.bottomAnchor.constraint(equalTo: projectButton.topAnchor, constant: -2)
+            taskContent.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -46)
         ])
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
         
-        (taskContent as UIScrollView).delegate = self
-        taskContent.isUserInteractionEnabled = true
-        taskContent.alwaysBounceVertical = true
-        automaticallyAdjustsScrollViewInsets = false
-        
-        let labelProducer: SignalProducer<String, NoError> = SignalProducer.combineLatest(currentState.producer, currentOffsetY.producer).map { state, offset in
-            if abs(offset) >= CreateViewController.savingThreshold {
-                return "Release to save"
-            }
-            
-            return state.title
+        let center = NotificationCenter.default
+        center.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: .main) { note in
+            guard let infos = parse(keyboardNotification: note) else { return }
+
+            UIView.animate(withDuration: infos.1, delay: 0, options: infos.2, animations: {
+                self.bottomConstant.constant = infos.0
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+
         }
         
-        pullToSaveLabel.reactive.text <~ labelProducer
+        center.addObserver(forName: .UIKeyboardWillHide, object: nil, queue: .main) { note in
+            guard let infos = parse(keyboardNotification: note) else { return }
+            
+            UIView.animate(withDuration: infos.1, delay: 0, options: infos.2, animations: {
+                self.bottomConstant.constant = 0
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
     }
     
     @IBAction func didTapProject(_ sender: Any) {
@@ -87,22 +64,36 @@ final class CreateViewController: UIViewController {
     func reset() {
         taskContent.text = ""
     }
-}
-
-extension CreateViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        currentOffsetY.swap(scrollView.contentOffset.y)
-        
-        guard scrollView.contentOffset.y < 0 else { return }
-        
-        pullToSaveLabel.alpha = min(abs(scrollView.contentOffset.y), CreateViewController.alphaThreshold) / CreateViewController.alphaThreshold
-    }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        guard scrollView.contentOffset.y < 0 else { return }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        guard let destination = segue.destination as? ToolbarViewController else { return }
+        
+        _ = destination.view
+        
+        destination.selectProject.addTarget(self, action: #selector(didTapSelectProject), for: .touchUpInside)
+        destination.selectProject.reactive.title <~ projectName
 
-        if abs(scrollView.contentOffset.y) >= CreateViewController.savingThreshold {
-            delegate?.didReleaseToSave()
+        destination.createTask.isEnabled = false
+        destination.createTask.addTarget(self, action: #selector(didTapCreate), for: .touchUpInside)
+        destination.createTask.reactive.isEnabled <~ taskContent.reactive.continuousTextValues.map { !($0 ?? "").isEmpty }
+        
+        tint.producer.observe(on: UIScheduler()).startWithValues { color in
+            destination.view.backgroundColor = color
+
+            let tintColor: UIColor = color.isDark ? .white : .black
+            destination.createTask.tintColor = tintColor
+            destination.selectProject.tintColor = tintColor
         }
     }
+    
+    @objc func didTapSelectProject() {
+        delegate?.didTapSelectProject()
+    }
+    
+    @objc func didTapCreate() {
+        delegate?.didTapCreate()
+    }
+
 }

@@ -66,6 +66,9 @@ enum StoryboardScene {
 }
 
 enum StoryboardSegue {
+  enum Main: String, StoryboardSegueType {
+    case toolbar
+  }
 }
 
 private final class BundleToken {}

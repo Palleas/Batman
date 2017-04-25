@@ -19,8 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         
         self.createFlow.start()
-
-        
         
         return true
     }

@@ -64,6 +64,11 @@ final class TaskTextView: UITextView {
         
         textContainerInset = UIEdgeInsets(top: 32, left: 20, bottom: 20, right: 20)
         font = UIFont.btmTaskNameFont()
+        
+        isUserInteractionEnabled = true
+        alwaysBounceVertical = true
+        
+        keyboardDismissMode = .onDrag
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -57,6 +57,9 @@
 		7A32BA791E9E5631005882A0 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A32BA751E9E5631005882A0 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A35A7AC1EA6C831004746FC /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A35A7AB1EA6C831004746FC /* ProjectCell.swift */; };
 		7A35A7AF1EA6C956004746FC /* BlurPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A35A7AE1EA6C956004746FC /* BlurPresentationController.swift */; };
+		7A5C7A951EAED85000528E05 /* UIColor+SweeterColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5C7A941EAED85000528E05 /* UIColor+SweeterColor.swift */; };
+		7A5C7A971EAEDAF800528E05 /* ToolbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5C7A961EAEDAF800528E05 /* ToolbarViewController.swift */; };
+		7A5C7A991EAEE9CE00528E05 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5C7A981EAEE9CE00528E05 /* Keyboard.swift */; };
 		7A8A88B41EA1737400093AA8 /* Workspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A88B31EA1737400093AA8 /* Workspace.swift */; };
 		7AD500761EABB07500F0520E /* UIFont+BTMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD500751EABB07500F0520E /* UIFont+BTMAdditions.swift */; };
 		7AD5008A1EABC26900F0520E /* TaskTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD500891EABC26900F0520E /* TaskTextView.swift */; };
@@ -162,6 +165,9 @@
 		7A32BA751E9E5631005882A0 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		7A35A7AB1EA6C831004746FC /* ProjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		7A35A7AE1EA6C956004746FC /* BlurPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurPresentationController.swift; sourceTree = "<group>"; };
+		7A5C7A941EAED85000528E05 /* UIColor+SweeterColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+SweeterColor.swift"; sourceTree = "<group>"; };
+		7A5C7A961EAEDAF800528E05 /* ToolbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolbarViewController.swift; sourceTree = "<group>"; };
+		7A5C7A981EAEE9CE00528E05 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		7A8A88B31EA1737400093AA8 /* Workspace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
 		7AD500751EABB07500F0520E /* UIFont+BTMAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+BTMAdditions.swift"; sourceTree = "<group>"; };
 		7AD500891EABC26900F0520E /* TaskTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTextView.swift; sourceTree = "<group>"; };
@@ -272,6 +278,7 @@
 			children = (
 				7A32BA621E9E5407005882A0 /* CreateViewController.swift */,
 				7A1B4BCC1E9F124B00CE507A /* ProjectsViewController.swift */,
+				7A5C7A961EAEDAF800528E05 /* ToolbarViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -281,6 +288,7 @@
 			children = (
 				7A0802D31E9F9C8E007E9EBC /* Credentials.swift */,
 				7A13594A1E9EBD64006AB737 /* JSONHelper.swift */,
+				7A5C7A981EAEE9CE00528E05 /* Keyboard.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -291,6 +299,7 @@
 				7A2690E91EA3FDE700FEBBF8 /* BuilderSpec.swift */,
 				7A2690D81EA3E6AB00FEBBF8 /* Info.plist */,
 				7A2690EB1EA3FEBB00FEBBF8 /* fixtures */,
+				7A2690FA1EA52A3900FEBBF8 /* ColorDump */,
 				7AEEFE6A1EAD126B00459E3B /* ProjectsControllerSpec.swift */,
 			);
 			path = BatmanTests;
@@ -312,7 +321,8 @@
 			children = (
 				7A2690FB1EA52A3900FEBBF8 /* main.swift */,
 			);
-			path = ColorDump;
+			name = ColorDump;
+			path = ../ColorDump;
 			sourceTree = "<group>";
 		};
 		7A32BA541E9E5407005882A0 = {
@@ -320,7 +330,6 @@
 			children = (
 				7A32BA5F1E9E5407005882A0 /* Batman */,
 				7A2690D51EA3E6AB00FEBBF8 /* BatmanTests */,
-				7A2690FA1EA52A3900FEBBF8 /* ColorDump */,
 				7A2690F21EA529EB00FEBBF8 /* Common */,
 				7A1359431E9EB622006AB737 /* Frameworks */,
 				7A32BA5E1E9E5407005882A0 /* Products */,
@@ -341,6 +350,7 @@
 		7A32BA5F1E9E5407005882A0 /* Batman */ = {
 			isa = PBXGroup;
 			children = (
+				7A5C7A931EAED83600528E05 /* Vendor */,
 				7A1B4BCF1E9F170100CE507A /* Domain */,
 				7A35A7A81EA6C751004746FC /* Flow Coordinators */,
 				7A35A7A91EA6C77F004746FC /* Model */,
@@ -391,6 +401,14 @@
 				7A35A7AE1EA6C956004746FC /* BlurPresentationController.swift */,
 			);
 			path = Transition;
+			sourceTree = "<group>";
+		};
+		7A5C7A931EAED83600528E05 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				7A5C7A941EAED85000528E05 /* UIColor+SweeterColor.swift */,
+			);
+			name = Vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -560,11 +578,14 @@
 				7AE510B61EA8459000403245 /* ProjectsHeader.swift in Sources */,
 				7A2690E81EA3FD6700FEBBF8 /* Builder.swift in Sources */,
 				7A1359561E9F0D4B006AB737 /* Storyboards.swift in Sources */,
+				7A5C7A951EAED85000528E05 /* UIColor+SweeterColor.swift in Sources */,
+				7A5C7A971EAEDAF800528E05 /* ToolbarViewController.swift in Sources */,
 				7A8A88B41EA1737400093AA8 /* Workspace.swift in Sources */,
 				7A13595A1E9F0F06006AB737 /* Coordinator.swift in Sources */,
 				7A32BA731E9E5418005882A0 /* Client.swift in Sources */,
 				7A0802D41E9F9C8E007E9EBC /* Credentials.swift in Sources */,
 				7A1359531E9F0CC1006AB737 /* SelectProjectFlowCoordinator.swift in Sources */,
+				7A5C7A991EAEE9CE00528E05 /* Keyboard.swift in Sources */,
 				7AD634C81EA2DA590023DF00 /* Storage.swift in Sources */,
 				7A1B4BCD1E9F124B00CE507A /* ProjectsViewController.swift in Sources */,
 				7A1359471E9EB9BC006AB737 /* Project.swift in Sources */,
