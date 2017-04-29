@@ -49,3 +49,5 @@ extension Array where Element: Boxable {
     
 }
 
+
+extension ProjectColor: UnboxableEnum {}

@@ -8,7 +8,6 @@ import Foundation
     public typealias Color = NSColor
 #endif
 
-import Unbox
 
 extension Color {
     internal convenience init(hexColor: String) {
@@ -89,5 +88,3 @@ extension ProjectColor {
         }
     }
 }
-
-extension ProjectColor: UnboxableEnum {}
