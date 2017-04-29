@@ -266,9 +266,9 @@
 			children = (
 				7A2690E71EA3FD6700FEBBF8 /* Builder.swift */,
 				7A32BA721E9E5418005882A0 /* Client.swift */,
+				7AEEFE681EAC549D00459E3B /* ProjectsController.swift */,
 				7AD634C71EA2DA590023DF00 /* Storage.swift */,
 				7A1359481E9EB9DD006AB737 /* Token.swift */,
-				7AEEFE681EAC549D00459E3B /* ProjectsController.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -298,9 +298,8 @@
 			children = (
 				7A2690E91EA3FDE700FEBBF8 /* BuilderSpec.swift */,
 				7A2690D81EA3E6AB00FEBBF8 /* Info.plist */,
-				7A2690EB1EA3FEBB00FEBBF8 /* fixtures */,
-				7A2690FA1EA52A3900FEBBF8 /* ColorDump */,
 				7AEEFE6A1EAD126B00459E3B /* ProjectsControllerSpec.swift */,
+				7A2690EB1EA3FEBB00FEBBF8 /* fixtures */,
 			);
 			path = BatmanTests;
 			sourceTree = "<group>";
@@ -321,8 +320,7 @@
 			children = (
 				7A2690FB1EA52A3900FEBBF8 /* main.swift */,
 			);
-			name = ColorDump;
-			path = ../ColorDump;
+			path = ColorDump;
 			sourceTree = "<group>";
 		};
 		7A32BA541E9E5407005882A0 = {
@@ -330,6 +328,7 @@
 			children = (
 				7A32BA5F1E9E5407005882A0 /* Batman */,
 				7A2690D51EA3E6AB00FEBBF8 /* BatmanTests */,
+				7A2690FA1EA52A3900FEBBF8 /* ColorDump */,
 				7A2690F21EA529EB00FEBBF8 /* Common */,
 				7A1359431E9EB622006AB737 /* Frameworks */,
 				7A32BA5E1E9E5407005882A0 /* Products */,
@@ -350,13 +349,13 @@
 		7A32BA5F1E9E5407005882A0 /* Batman */ = {
 			isa = PBXGroup;
 			children = (
-				7A5C7A931EAED83600528E05 /* Vendor */,
 				7A1B4BCF1E9F170100CE507A /* Domain */,
 				7A35A7A81EA6C751004746FC /* Flow Coordinators */,
 				7A35A7A91EA6C77F004746FC /* Model */,
 				7A1359581E9F0D53006AB737 /* Resources */,
 				7A35A7AD1EA6C948004746FC /* Transition */,
 				7A1B4BD11E9F171100CE507A /* Utils */,
+				7A5C7A931EAED83600528E05 /* Vendor */,
 				7A1B4BD01E9F170700CE507A /* View Controllers */,
 				7A35A7AA1EA6C824004746FC /* Views */,
 				7A32BA601E9E5407005882A0 /* AppDelegate.swift */,
@@ -409,6 +408,7 @@
 				7A5C7A941EAED85000528E05 /* UIColor+SweeterColor.swift */,
 			);
 			name = Vendor;
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
