@@ -56,6 +56,11 @@ extension CreateFlowCoordinator: CreateViewControllerDelegate {
             switch result {
             case let .success(createdTask):
                 let sharing = UIActivityViewController(activityItems: [createdTask.url()], applicationActivities: nil)
+                sharing.popoverPresentationController?.sourceView = self?.root.view
+                
+                let sourcePoint = CGPoint(x: self?.root.view.frame.midX ?? 0, y: self?.root.view.frame.midY ?? 0)
+                sharing.popoverPresentationController?.sourceRect = CGRect(origin: sourcePoint, size: .zero)
+                
                 sharing.completionWithItemsHandler = { activity, success, items, error in
                     self?.root.reset()
                 }
