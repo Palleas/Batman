@@ -14,7 +14,7 @@ class ClientSpec: QuickSpec {
             
             let client = Client(token: Token(value: "invalid-token"))
             
-            it("handles HTTP errors") {
+            it("handles Asana errors") {
                 stub(condition: isHost("app.asana.com"), response: { _ in
                     let response = ["errors": [
                         ["message": "Not Authorized"]
@@ -31,6 +31,25 @@ class ClientSpec: QuickSpec {
                 }
                 
                 expect(asanaErrors) == [AsanaError(message: "Not Authorized")]
+            }
+            
+            it("handles resources not found") {
+                stub(condition: isHost("app.asana.com"), response: { _ in
+                    let response = ["errors": [
+                        ["message": "Not Found"]
+                    ]]
+                    
+                    return OHHTTPStubsResponse(data: try! JSONSerialization.data(withJSONObject: response, options: .prettyPrinted), statusCode: 404, headers: [:])
+                })
+
+                let result = client.project(id: 18282).first()!
+                
+                guard case let .failure(error) = result else {
+                    fail("Expected client to fail")
+                    return
+                }
+                
+                expect(error) == Client.ClientError.doesNotExist
             }
         }
     }
