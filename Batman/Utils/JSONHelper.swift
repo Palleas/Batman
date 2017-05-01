@@ -2,30 +2,41 @@ import Foundation
 import Unbox
 import Result
 
-func decode<T: Unboxable>(from data: Data) -> Result<T, UnboxError> {
-    let content = String(data: data, encoding: .utf8)
-    print("Content = \(content!)")
-    
+func decode<T: Unboxable>(from data: Data) -> Result<T, UnboxError>  {
+    return Result(attempt: { () -> T in
+        let content: [String: T] = try unbox(data: data)
+        
+        guard let object = content["data"] else {
+            throw UnboxError.invalidData
+        }
+        
+        return object
+    })
+}
 
-    do {
-        let result: [String: T] = try unbox(data: data)
-        return .success(result["data"]!)
-    } catch {
-        return .failure(error as! UnboxError)
+func decodeArray<T: Unboxable>(from data: Data) -> Result<[T], UnboxError> {
+    return Result(attempt: { () -> [T] in
+        return try unbox(data: data, atKeyPath: "data")
+    })
+}
+
+func decodeErrors(from data: Data) throws -> [AsanaError] {
+    return try unbox(data: data, atKeyPath: "errors")
+}
+
+struct AsanaError: Error, Unboxable {
+    let message: String
+
+    init(unboxer: Unboxer) throws {
+        self.message = try unboxer.unbox(key: "message")
+    }
+    
+    init(message: String) {
+        self.message = message
     }
 }
 
-func decode<T: Unboxable>(from data: Data) -> Result<[T], UnboxError> {
-    let content = String(data: data, encoding: .utf8)
-    print("Content = \(content!)")
-    
-    do {
-        let result: [T] = try unbox(data: data, atKeyPath: "data")
-        return .success(result)
-    } catch {
-        return .failure(error as! UnboxError)
-    }
-}
+extension AsanaError: AutoEquatable {}
 
 protocol Encodable {
     associatedtype Response: Unboxable

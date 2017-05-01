@@ -40,8 +40,10 @@ final class Client {
         case tasks
     }
     
-    enum ClientError: Error {
-        case requestError
+    enum ClientError: Error, AutoEquatable {
+        case networkError(String?)
+        case doesNotExist
+        case requestError([AsanaError])
         case decodingError
     }
     
@@ -54,15 +56,15 @@ final class Client {
     }
     
     func projects() -> SignalProducer<[Project], ClientError> {
-        return get(.projects)
+        return fetchMany(.projects)
     }
     
     func project(id: Int) -> SignalProducer<Project, ClientError> {
-        return get(.project(id: id))
+        return fetchOne(.project(id: id))
     }
     
     func workspaces() -> SignalProducer<[Workspace], ClientError> {
-        return get(.workspaces)
+        return fetchMany(.workspaces)
     }
     
     func create(task: Task) -> SignalProducer<(CreatedTask), ClientError> {
@@ -73,28 +75,44 @@ final class Client {
         let request = URLRequest.create(endpoint, object: object)
         
         return session.reactive.data(with: request)
-            .mapError { _ in ClientError.requestError }
-            .attemptMap { return decode(from: $0.0)
-                .mapError { _ in ClientError.decodingError } }
-    }
-    
-    private func get<T: Unboxable>(_ endpoint: Endpoint) -> SignalProducer<T, ClientError> {
-        let request = URLRequest.create(endpoint)
-        
-        return session.reactive.data(with: request)
-            .mapError { _ in ClientError.requestError }
+            .mapError { ClientError.networkError($0.errorDescription) }
             .attemptMap { return decode(from: $0.0).mapError { _ in ClientError.decodingError } }
     }
     
-    private func get<T: Unboxable>(_ endpoint: Endpoint) -> SignalProducer<[T], ClientError> {
-        let request = URLRequest.create(endpoint)
-        
-        return session.reactive.data(with: request)
-            .mapError { _ in ClientError.requestError }
-            .attemptMap { return decode(from: $0.0).mapError { error in
-                print("Got error = \(error)")
-                return ClientError.decodingError }
+    private func fetchOne<T: Unboxable>(_ endpoint: Endpoint) -> SignalProducer<T, ClientError> {
+        return fetch(endpoint).attemptMap { data -> Result<T, Client.ClientError> in
+            return decode(from: data).mapError { _ in ClientError.decodingError }
         }
+    }
+
+    private func fetchMany<T: Unboxable>(_ endpoint: Endpoint) -> SignalProducer<[T], ClientError> {
+        return fetch(endpoint).attemptMap({ data -> Result<[T], Client.ClientError> in
+            return decodeArray(from: data).mapError { _ in ClientError.decodingError }
+        })
+    }
+    
+    private func fetch(_ endpoint: Endpoint) -> SignalProducer<Data, ClientError> {
+        let request = URLRequest.create(endpoint)
+
+        return session.reactive.data(with: request)
+            .mapError { ClientError.networkError($0.errorDescription) }
+            .attemptMap { data, response in
+                let response = response as! HTTPURLResponse
+                if response.statusCode == 404 {
+                    return .failure(.doesNotExist)
+                }
+                
+                if response.statusCode >= 400 && response.statusCode <= 600 {
+                    do {
+                        let errors = try decodeErrors(from: data)
+                        return .failure(.requestError(errors))
+                    } catch {
+                        return .failure(.decodingError)
+                    }
+                }
+                
+                return .success(data)
+            }
     }
 
 }

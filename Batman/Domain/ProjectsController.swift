@@ -48,7 +48,7 @@ final class ProjectsController {
                 sink.send(error: .noCache)
             }
         }
-            .attemptMap { return decode(from: $0).mapError { print("error \($0)"); return ProjectsError.noCache } }
+            .attemptMap { return decodeArray(from: $0).mapError { _ in ProjectsError.noCache } }
     }
     
     func fetchFromRemote() -> Projects {

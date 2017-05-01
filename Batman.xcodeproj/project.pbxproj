@@ -60,6 +60,7 @@
 		7A5C7A951EAED85000528E05 /* UIColor+SweeterColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5C7A941EAED85000528E05 /* UIColor+SweeterColor.swift */; };
 		7A5C7A971EAEDAF800528E05 /* ToolbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5C7A961EAEDAF800528E05 /* ToolbarViewController.swift */; };
 		7A5C7A991EAEE9CE00528E05 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5C7A981EAEE9CE00528E05 /* Keyboard.swift */; };
+		7A76F6271EB42108001DE236 /* ClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A76F6261EB42108001DE236 /* ClientSpec.swift */; };
 		7A8A88B41EA1737400093AA8 /* Workspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A88B31EA1737400093AA8 /* Workspace.swift */; };
 		7AD500761EABB07500F0520E /* UIFont+BTMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD500751EABB07500F0520E /* UIFont+BTMAdditions.swift */; };
 		7AD5008A1EABC26900F0520E /* TaskTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD500891EABC26900F0520E /* TaskTextView.swift */; };
@@ -168,6 +169,7 @@
 		7A5C7A941EAED85000528E05 /* UIColor+SweeterColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+SweeterColor.swift"; sourceTree = "<group>"; };
 		7A5C7A961EAEDAF800528E05 /* ToolbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolbarViewController.swift; sourceTree = "<group>"; };
 		7A5C7A981EAEE9CE00528E05 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		7A76F6261EB42108001DE236 /* ClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientSpec.swift; sourceTree = "<group>"; };
 		7A8A88B31EA1737400093AA8 /* Workspace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
 		7AD500751EABB07500F0520E /* UIFont+BTMAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+BTMAdditions.swift"; sourceTree = "<group>"; };
 		7AD500891EABC26900F0520E /* TaskTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTextView.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				7A2690D81EA3E6AB00FEBBF8 /* Info.plist */,
 				7AEEFE6A1EAD126B00459E3B /* ProjectsControllerSpec.swift */,
 				7A2690EB1EA3FEBB00FEBBF8 /* fixtures */,
+				7A76F6261EB42108001DE236 /* ClientSpec.swift */,
 			);
 			path = BatmanTests;
 			sourceTree = "<group>";
@@ -407,7 +410,6 @@
 			children = (
 				7A5C7A941EAED85000528E05 /* UIColor+SweeterColor.swift */,
 			);
-			name = Vendor;
 			path = Vendor;
 			sourceTree = "<group>";
 		};
@@ -544,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AEEFE6B1EAD126B00459E3B /* ProjectsControllerSpec.swift in Sources */,
+				7A76F6271EB42108001DE236 /* ClientSpec.swift in Sources */,
 				7A2690EA1EA3FDE700FEBBF8 /* BuilderSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

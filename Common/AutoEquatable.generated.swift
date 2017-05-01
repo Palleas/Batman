@@ -23,6 +23,12 @@ fileprivate func compareArrays<T>(lhs: [T], rhs: [T], compare: (_ lhs: T, _ rhs:
 }
 
 // MARK: - AutoEquatable for classes, protocols, structs
+// MARK: - AsanaError AutoEquatable
+extension AsanaError: Equatable {} 
+internal func == (lhs: AsanaError, rhs: AsanaError) -> Bool {
+    guard lhs.message == rhs.message else { return false }
+    return true
+}
 // MARK: - Project AutoEquatable
 extension Project: Equatable {} 
 internal func == (lhs: Project, rhs: Project) -> Bool {
@@ -38,6 +44,21 @@ extension Builder.BuilderError: Equatable {}
 internal func == (lhs: Builder.BuilderError, rhs: Builder.BuilderError) -> Bool {
     switch (lhs, rhs) {
      case (.missingContent, .missingContent): 
+         return true 
+    default: return false
+    }
+}
+// MARK: - Client.ClientError AutoEquatable
+extension Client.ClientError: Equatable {}
+internal func == (lhs: Client.ClientError, rhs: Client.ClientError) -> Bool {
+    switch (lhs, rhs) {
+    case (.networkError(let lhs), .networkError(let rhs)): 
+        return lhs == rhs
+     case (.doesNotExist, .doesNotExist): 
+         return true 
+    case (.requestError(let lhs), .requestError(let rhs)): 
+        return lhs == rhs
+     case (.decodingError, .decodingError): 
          return true 
     default: return false
     }
