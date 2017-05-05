@@ -62,7 +62,6 @@
 		7A5C7A991EAEE9CE00528E05 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5C7A981EAEE9CE00528E05 /* Keyboard.swift */; };
 		7A76F6271EB42108001DE236 /* ClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A76F6261EB42108001DE236 /* ClientSpec.swift */; };
 		7A8A88B41EA1737400093AA8 /* Workspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8A88B31EA1737400093AA8 /* Workspace.swift */; };
-		7AA2717F1EB83C4B0064FF3D /* BatmanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2717E1EB83C4B0064FF3D /* BatmanUITests.swift */; };
 		7AD500761EABB07500F0520E /* UIFont+BTMAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD500751EABB07500F0520E /* UIFont+BTMAdditions.swift */; };
 		7AD5008A1EABC26900F0520E /* TaskTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD500891EABC26900F0520E /* TaskTextView.swift */; };
 		7AD634C81EA2DA590023DF00 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD634C71EA2DA590023DF00 /* Storage.swift */; };
@@ -77,13 +76,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		7A2690D91EA3E6AB00FEBBF8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7A32BA551E9E5407005882A0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7A32BA5C1E9E5407005882A0;
-			remoteInfo = Batman;
-		};
-		7AA271811EB83C4B0064FF3D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7A32BA551E9E5407005882A0 /* Project object */;
 			proxyType = 1;
@@ -179,9 +171,6 @@
 		7A5C7A981EAEE9CE00528E05 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		7A76F6261EB42108001DE236 /* ClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientSpec.swift; sourceTree = "<group>"; };
 		7A8A88B31EA1737400093AA8 /* Workspace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
-		7AA2717C1EB83C4B0064FF3D /* BatmanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BatmanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AA2717E1EB83C4B0064FF3D /* BatmanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatmanUITests.swift; sourceTree = "<group>"; };
-		7AA271801EB83C4B0064FF3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AD500751EABB07500F0520E /* UIFont+BTMAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+BTMAdditions.swift"; sourceTree = "<group>"; };
 		7AD500891EABC26900F0520E /* TaskTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTextView.swift; sourceTree = "<group>"; };
 		7AD634C71EA2DA590023DF00 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
@@ -232,13 +221,6 @@
 				5EE6E01F4C254DA18B2CFEA5 /* AVFoundation.framework in Frameworks */,
 				770575B0F22129E8051C3CD5 /* CoreMedia.framework in Frameworks */,
 				BF93F6CD95FAD76497EA9169 /* CoreVideo.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7AA271791EB83C4B0064FF3D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +333,6 @@
 				7A2690D51EA3E6AB00FEBBF8 /* BatmanTests */,
 				7A2690FA1EA52A3900FEBBF8 /* ColorDump */,
 				7A2690F21EA529EB00FEBBF8 /* Common */,
-				7AA2717D1EB83C4B0064FF3D /* BatmanUITests */,
 				7A1359431E9EB622006AB737 /* Frameworks */,
 				7A32BA5E1E9E5407005882A0 /* Products */,
 				73875FD4949066BD82478180 /* Bridging-Header.h */,
@@ -364,7 +345,6 @@
 				7A32BA5D1E9E5407005882A0 /* Batman.app */,
 				7A2690D41EA3E6AB00FEBBF8 /* BatmanTests.xctest */,
 				7A2690F91EA52A3900FEBBF8 /* ColorDump */,
-				7AA2717C1EB83C4B0064FF3D /* BatmanUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -433,15 +413,6 @@
 			path = Vendor;
 			sourceTree = "<group>";
 		};
-		7AA2717D1EB83C4B0064FF3D /* BatmanUITests */ = {
-			isa = PBXGroup;
-			children = (
-				7AA2717E1EB83C4B0064FF3D /* BatmanUITests.swift */,
-				7AA271801EB83C4B0064FF3D /* Info.plist */,
-			);
-			path = BatmanUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -499,24 +470,6 @@
 			productReference = 7A32BA5D1E9E5407005882A0 /* Batman.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7AA2717B1EB83C4B0064FF3D /* BatmanUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7AA271851EB83C4B0064FF3D /* Build configuration list for PBXNativeTarget "BatmanUITests" */;
-			buildPhases = (
-				7AA271781EB83C4B0064FF3D /* Sources */,
-				7AA271791EB83C4B0064FF3D /* Frameworks */,
-				7AA2717A1EB83C4B0064FF3D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				7AA271821EB83C4B0064FF3D /* PBXTargetDependency */,
-			);
-			name = BatmanUITests;
-			productName = BatmanUITests;
-			productReference = 7AA2717C1EB83C4B0064FF3D /* BatmanUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -544,12 +497,6 @@
 						DevelopmentTeam = 8VS9JKFDZS;
 						ProvisioningStyle = Automatic;
 					};
-					7AA2717B1EB83C4B0064FF3D = {
-						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 8VS9JKFDZS;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 7A32BA5C1E9E5407005882A0;
-					};
 				};
 			};
 			buildConfigurationList = 7A32BA581E9E5407005882A0 /* Build configuration list for PBXProject "Batman" */;
@@ -568,7 +515,6 @@
 				7A32BA5C1E9E5407005882A0 /* Batman */,
 				7A2690D31EA3E6AB00FEBBF8 /* BatmanTests */,
 				7A2690F81EA52A3900FEBBF8 /* ColorDump */,
-				7AA2717B1EB83C4B0064FF3D /* BatmanUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -589,13 +535,6 @@
 				7A32BA6B1E9E5407005882A0 /* LaunchScreen.storyboard in Resources */,
 				7A32BA681E9E5407005882A0 /* Assets.xcassets in Resources */,
 				7A32BA661E9E5407005882A0 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7AA2717A1EB83C4B0064FF3D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,14 +599,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7AA271781EB83C4B0064FF3D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7AA2717F1EB83C4B0064FF3D /* BatmanUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -675,11 +606,6 @@
 			isa = PBXTargetDependency;
 			target = 7A32BA5C1E9E5407005882A0 /* Batman */;
 			targetProxy = 7A2690D91EA3E6AB00FEBBF8 /* PBXContainerItemProxy */;
-		};
-		7AA271821EB83C4B0064FF3D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7A32BA5C1E9E5407005882A0 /* Batman */;
-			targetProxy = 7AA271811EB83C4B0064FF3D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -901,32 +827,6 @@
 			};
 			name = Release;
 		};
-		7AA271831EB83C4B0064FF3D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = 8VS9JKFDZS;
-				INFOPLIST_FILE = BatmanUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.BatmanUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Batman;
-			};
-			name = Debug;
-		};
-		7AA271841EB83C4B0064FF3D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = 8VS9JKFDZS;
-				INFOPLIST_FILE = BatmanUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.BatmanUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = Batman;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -962,15 +862,6 @@
 			buildConfigurations = (
 				7A32BA701E9E5407005882A0 /* Debug */,
 				7A32BA711E9E5407005882A0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7AA271851EB83C4B0064FF3D /* Build configuration list for PBXNativeTarget "BatmanUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7AA271831EB83C4B0064FF3D /* Debug */,
-				7AA271841EB83C4B0064FF3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
