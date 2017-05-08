@@ -837,7 +837,7 @@
 				7A2690DC1EA3E6AB00FEBBF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		7A2690FD1EA52A3900FEBBF8 /* Build configuration list for PBXNativeTarget "ColorDump" */ = {
 			isa = XCConfigurationList;
@@ -846,7 +846,7 @@
 				7A2690FF1EA52A3900FEBBF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		7A32BA581E9E5407005882A0 /* Build configuration list for PBXProject "Batman" */ = {
 			isa = XCConfigurationList;
@@ -855,7 +855,7 @@
 				7A32BA6E1E9E5407005882A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		7A32BA6F1E9E5407005882A0 /* Build configuration list for PBXNativeTarget "Batman" */ = {
 			isa = XCConfigurationList;
@@ -864,7 +864,7 @@
 				7A32BA711E9E5407005882A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

@@ -39,16 +39,6 @@
                ReferencedContainer = "container:Batman.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7AA2717B1EB83C4B0064FF3D"
-               BuildableName = "BatmanUITests.xctest"
-               BlueprintName = "BatmanUITests"
-               ReferencedContainer = "container:Batman.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
