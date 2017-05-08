@@ -1,7 +1,7 @@
 xcov.report(
-   scheme: "Batman",
-   source_directory: "/Users/romain/OpenSource/Batman-ios",
-   project: "/Users/romain/OpenSource/Batman-ios/Batman.xcodeproj",
+   scheme: ENV['BUDDYBUILD_SCHEME'],
+   source_directory: ENV['BUDDYBUILD_WORKSPACE'],
+   project: "#{ENV['BUDDYBUILD_WORKSPACE']}/Batman.xcodeproj",
    minimum_coverage_percentage: 90,
-   derived_data_path: "/Users/romain/BB-sandbox/bbtest",
+   derived_data_path: ENV['BUDDYBUILD_TEST_DIR'],
 )
