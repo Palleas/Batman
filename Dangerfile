@@ -5,11 +5,12 @@ JSON_FORMATTER_PATH = `bundle exec xcpretty-json-formatter`
 xcode_summary.project_root = ENV["BUDDYBUILD_HOME"]
 xcode_summary.report 'xcodebuild_output.json'
 
-%x( ls -hal "/tmp/sandbox/#{ENV["BUDDYBUILD_BUILD_ID"]}" )
+%x( ls -hal "/tmp/sandbox/#{ENV["BUDDYBUILD_TEST_DIR"]}" )
 
 xcov.report(
    scheme: ENV['BUDDYBUILD_SCHEME'],
+   source_directory: ENV['BUDDYBUILD_WORKSPACE'],
    project: "#{ENV['BUDDYBUILD_WORKSPACE']}/Batman.xcodeproj",
    minimum_coverage_percentage: 25,
-   derived_data_path: ENV["BUDDYBUILD_TEST_DIR"]
+   derived_data_path: ENV["BUDDYBUILD_TEST_DIR"],
 )
