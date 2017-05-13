@@ -3,8 +3,13 @@ import Unbox
 
 struct Workspace: Unboxable {
     
+    /// Id of the workspace
     let id: Int
+    
+    /// Name of the workspace
     let name: String
+    
+    /// Workspace belongs to an organization 
     let isOrganization: Bool
 
     init(unboxer: Unboxer) throws {
