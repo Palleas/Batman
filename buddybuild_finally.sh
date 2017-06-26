@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+printenv
+
 # Install gems locally
 bundle install --path Vendor --quiet
 
