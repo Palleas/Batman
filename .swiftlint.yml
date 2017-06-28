@@ -1,1 +1,5 @@
 reporter: junit
+included:
+    - Batman
+    - BatmanTests
+    - ColorDump
