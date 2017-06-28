@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-mkdir -p buddybuild_artifacts/swiftlint
+TARGET="$BUDDYBUILD_WORKSPACE/buddybuild_artifacts/swiftlint"
+mkdir -p "$TARGET"
 
-swiftlint --config "$BUDDYBUILD_WORKSPACE/.swiftlint.yml" > buddybuild_artifacts/swiftlint/swiftlint.xml
-
-cat buddybuild_artifacts/swiftlint/swiftlint.xml
+swiftlint --config "$BUDDYBUILD_WORKSPACE/.swiftlint.yml" > "$TARGET/swiftlint.xml"
