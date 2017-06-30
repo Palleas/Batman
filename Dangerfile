@@ -10,3 +10,5 @@ xcov.report(
   derived_data_path: ENV['BUDDYBUILD_TEST_DIR'],
 )
 
+swiftlint.config_file = '.swiftlint.yml'
+swiftlint.lint_files inline_mode: true
