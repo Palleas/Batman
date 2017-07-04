@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Running swiftlint
-swiftlint
+swiftlint --path $BUDDYBUILD_WORKSPACE
 
 # Install gems locally
 bundle install --path Vendor --quiet
