@@ -2,7 +2,7 @@
 warn("PR is classed as Work in Progress") if github.pr_title.include? "[WIP]"
 
 swiftlint.directory = ENV['BUDDYBUILD_WORKSPACE']
-swiftlint.config_file = '.swiftlint.yml'
+#swiftlint.config_file = '.swiftlint.yml'
 swiftlint.lint_files
 
 puts "Running Xcov"
