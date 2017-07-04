@@ -1,9 +1,8 @@
 # Make it more obvious that a PR is a work in progress and shouldn't be merged yet
 warn("PR is classed as Work in Progress") if github.pr_title.include? "[WIP]"
 
-puts "Running Swiftlint"
+swiftlint.directory ENV['BUDDYBUILD_WORKSPACE']
 swiftlint.lint_files
-
 
 puts "Running Xcov"
 xcov.report(
@@ -12,4 +11,3 @@ xcov.report(
   minimum_coverage_percentage: 30,
   derived_data_path: ENV['BUDDYBUILD_TEST_DIR'],
 )
-
