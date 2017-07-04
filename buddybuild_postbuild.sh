@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Running swiftlint
+swiftlint
+
 # Install gems locally
 bundle install --path Vendor --quiet
 
