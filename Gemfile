@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 source "https://rubygems.org"
 
-gem 'danger', '~> 5.1', '>= 5.1.1'
+gem 'danger', :git => 'git@github.com:Palleas/danger.git'
 gem 'danger-xcode_summary', '~> 0.2.0'
 gem 'xcpretty', '~> 0.2.7'
 gem 'xcpretty-json-formatter', '~> 0.1.0'
