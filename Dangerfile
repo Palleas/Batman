@@ -6,12 +6,16 @@ swiftlint.config_file = '.swiftlint.yml'
 swiftlint.lint_files
 
 
-xcov.report(
- scheme: ENV['BUDDYBUILD_SCHEME'],
- project: "#{ENV['BUDDYBUILD_WORKSPACE']}/Batman.xcodeproj",
- minimum_coverage_percentage: 30,
- derived_data_path: ENV['BUDDYBUILD_TEST_DIR'],
-) if !ENV["BUDDYBUILD_BUILD_ID"].empty?
+begin
+  xcov.report(
+    scheme: ENV['BUDDYBUILD_SCHEME'],
+    project: "#{ENV['BUDDYBUILD_WORKSPACE']}/Batman.xcodeproj",
+    minimum_coverage_percentage: 30,
+    derived_data_path: ENV['BUDDYBUILD_TEST_DIR'],
+  )
+rescue
+    warning("Danger was unable to gather Code Coverage.")
+end
 
 modified_code = git.modified_files.include? "Memoires/*.swift"
 updated_release_notes = git.modified_files.include? "buddybuild_release_notes.txt"
