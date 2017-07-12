@@ -5,8 +5,13 @@ import struct UIKit.CGFloat
 
 struct Project {
 
+    /// Id of the project
     let id: Int
+
+    /// Name of the project
     let name: String
+    
+    /// Associated color to the project
     let color: ProjectColor?
 
 }
