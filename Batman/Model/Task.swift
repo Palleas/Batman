@@ -12,10 +12,13 @@ import Unbox
 struct Task {
     typealias Response = CreatedTask
     
+    /// Name of the task
     let name: String
     
+    /// Additional notes about the task
     let notes: String
     
+    /// Projects to attach this note to
     let projects: [Project]
 }
 

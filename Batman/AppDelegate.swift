@@ -9,8 +9,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         BuddyBuildSDK.setup()
 
-        // Setup a token using a env variable or using the 
-        // Buddybuild SDK
         let token = Token(value: keyOrProcessEnv("ASANA_TOKEN"))
         let client = Client(token: token)
         self.createFlow = CreateFlowCoordinator(client: client)
