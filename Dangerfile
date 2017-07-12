@@ -14,7 +14,7 @@ begin
     derived_data_path: ENV['BUDDYBUILD_TEST_DIR'],
   )
 rescue
-    warning("Danger was unable to gather Code Coverage.")
+    warn("Danger was unable to gather Code Coverage.")
 end
 
 modified_code = git.modified_files.include? "Memoires/*.swift"
