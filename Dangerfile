@@ -17,7 +17,8 @@ rescue
     warn("Danger was unable to gather Code Coverage.")
 end
 
-modified_code = git.modified_files.include? "Batman/*.swift"
-updated_release_notes = git.modified_files.include? "buddybuild_release_notes.txt"
+changed_files = git.modified_files + git.added_files - git.deleted_files
+modified_code = changed_files.include? "Batman/*.swift"
+updated_release_notes = changed_files.include? "buddybuild_release_notes.txt"
 
 fail "You forgot to update the `buddybuild_release_notes.txt` file - ([docs](http://docs.buddybuild.com/docs/focus-message))" if modified_code && !updated_release_notes
