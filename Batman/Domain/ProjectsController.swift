@@ -54,7 +54,7 @@ final class ProjectsController {
     func fetchFromRemote() -> Projects {
         return self.client.projects()
             .mapError(ProjectsError.fetchingError)
-            .flatMap(.latest, transform: self.save)
+            .flatMap(.latest, self.save)
     }
     
     func save(projects: [Project]) -> SignalProducer<[Project], NoError> {
