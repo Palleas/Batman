@@ -57,6 +57,10 @@ final class ProjectsController {
             .flatMap(.latest, self.save)
     }
     
+    /// Save projects locally
+    ///
+    /// - Parameter projects: the projects
+    /// - Returns: The project saved
     func save(projects: [Project]) -> SignalProducer<[Project], NoError> {
         return SignalProducer { sink, _ in
             defer {
