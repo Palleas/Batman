@@ -129,7 +129,7 @@ GEM
     httpclient (2.8.3)
     hurley (0.2)
     i18n (0.8.6)
-    json (2.1.0)
+    json (1.8.3)
     jwt (1.5.6)
     kramdown (1.14.0)
     little-plugger (1.1.4)
@@ -220,6 +220,7 @@ DEPENDENCIES
   danger-xcode_summary (~> 0.2.0)
   danger-xcov (~> 0.2.4)
   fastlane
+  json (= 1.8.3)
   slather
   xcpretty (~> 0.2.7)
   xcpretty-json-formatter (~> 0.1.0)

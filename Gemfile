@@ -12,5 +12,5 @@ gem 'danger-swiftlint'
 
 ## Testing something for a customer on gitlab
 gem "fastlane"
-# gem "json", "1.8.3"
+gem "json", "1.8.3"
 gem 'slather'
