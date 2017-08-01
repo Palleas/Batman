@@ -19,6 +19,11 @@ GEM
   remote: https://rubygems.org/
   specs:
     CFPropertyList (2.3.5)
+    activesupport (4.2.9)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
+      tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     babosa (1.0.2)
@@ -27,6 +32,7 @@ GEM
       cork
       nap
       open4 (~> 1.3)
+    clamp (0.6.5)
     colored (1.2)
     colored2 (3.1.2)
     commander-fastlane (4.4.4)
@@ -122,6 +128,7 @@ GEM
       multi_xml (>= 0.5.2)
     httpclient (2.8.3)
     hurley (0.2)
+    i18n (0.8.6)
     json (2.1.0)
     jwt (1.5.6)
     kramdown (1.14.0)
@@ -134,11 +141,15 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_magick (4.5.1)
+    mini_portile2 (2.2.0)
+    minitest (5.10.3)
     multi_json (1.12.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     nanaimo (0.2.3)
     nap (1.1.0)
+    nokogiri (1.8.0)
+      mini_portile2 (~> 2.2.0)
     octokit (4.7.0)
       sawyer (~> 0.8.0, >= 0.5.3)
     open4 (1.3.4)
@@ -161,11 +172,20 @@ GEM
       jwt (~> 1.5)
       multi_json (~> 1.10)
     slack-notifier (1.5.1)
+    slather (2.4.2)
+      CFPropertyList (~> 2.2)
+      activesupport (>= 4.0.2, < 5)
+      clamp (~> 0.6)
+      nokogiri (~> 1.6)
+      xcodeproj (~> 1.4)
     terminal-notifier (1.7.1)
     terminal-table (1.7.3)
       unicode-display_width (~> 1.1.1)
     thor (0.19.4)
+    thread_safe (0.3.6)
     tty-screen (0.5.0)
+    tzinfo (1.2.3)
+      thread_safe (~> 0.1)
     uber (0.0.15)
     unf (0.1.4)
       unf_ext
@@ -199,6 +219,8 @@ DEPENDENCIES
   danger-swiftlint
   danger-xcode_summary (~> 0.2.0)
   danger-xcov (~> 0.2.4)
+  fastlane
+  slather
   xcpretty (~> 0.2.7)
   xcpretty-json-formatter (~> 0.1.0)
 
