@@ -2,6 +2,8 @@
 
 chruby 2.3.1
 
+find $BUDDYBUILD_TEST_DIR -name "*.xccoverage"
+
 # Install gems locally
 bundle install --quiet
 
