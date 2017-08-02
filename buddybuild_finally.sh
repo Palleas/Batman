@@ -2,6 +2,8 @@
 
 chruby 2.3.1
 
+printenv
+
 find $BUDDYBUILD_TEST_DIR -name "*.xccoverage"
 
 # Install gems locally
