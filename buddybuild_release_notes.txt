@@ -1,0 +1,4 @@
+Master
+==============
+
+* Update some socumentation because documentation is important
