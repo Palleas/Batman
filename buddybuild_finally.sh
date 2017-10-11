@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-printenv 
+screen -ls
+cat all-the-dates.txt
 
 # Install gems locally
 bundle install --quiet
