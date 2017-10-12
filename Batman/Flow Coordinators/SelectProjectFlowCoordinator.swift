@@ -5,7 +5,7 @@ import Result
 final class SelectProjectFlowCoordinator: Coordinator {
     
     private(set) lazy var controller: ProjectsViewController = {
-        let controller = StoryboardScene.Main.instantiateProjects()
+        let controller = StoryboardScene.Main.projects.instantiate()
         controller.modalPresentationStyle = .custom
         controller.transitioningDelegate = self
         

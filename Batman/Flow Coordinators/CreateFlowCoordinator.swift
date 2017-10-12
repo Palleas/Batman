@@ -10,7 +10,7 @@ final class CreateFlowCoordinator: Coordinator {
     
     fileprivate let client: Client
     
-    fileprivate lazy var root = StoryboardScene.Main.instantiateCreate()
+    fileprivate lazy var root = StoryboardScene.Main.create.instantiate()
 
     private(set) lazy var controller: UINavigationController = {
         let navigationController = UINavigationController()
