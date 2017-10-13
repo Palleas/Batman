@@ -139,9 +139,12 @@ extension UIColor {
      - returns: An array of four CGFloat numbers from [0, 1] representing RGBA respectively.
      */
     var RGBA: [CGFloat] {
-        var RGBA: [CGFloat] = [0,0,0,0]
-        self.getRed(&RGBA[0], green: &RGBA[1], blue: &RGBA[2], alpha: &RGBA[3])
-        return RGBA
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        return [red, green, blue, alpha]
     }
 
 
@@ -164,9 +167,13 @@ extension UIColor {
      - returns: An array of four CGFloat numbers from [0, 255] representing HSBA respectively.
      */
     var HSBA: [CGFloat] {
-        var HSBA: [CGFloat] = [0,0,0,0]
-        self.getHue(&HSBA[0], saturation: &HSBA[1], brightness: &HSBA[2], alpha: &HSBA[3])
-        return HSBA
+        var hue: CGFloat = 0
+        var saturation: CGFloat = 0
+        var brightness: CGFloat = 0
+        var alpha: CGFloat = 0
+
+        self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        return [hue, saturation, brightness, alpha]
     }
 
 
@@ -653,3 +660,4 @@ extension UIColor {
     }
 
 }
+

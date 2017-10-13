@@ -11,7 +11,7 @@ class BuilderSpec: QuickSpec {
             typealias TaskResult = (title: String, note: String?)
             
             it("retrieves a title and a note") {
-                let content = load(.file("task-content"))
+                let content = loadFixture(.file("task-content"))
                 let result = Builder.task(from: content)
 
                 expect(result.value?.title) == "This is a very important task to do"
@@ -19,7 +19,7 @@ class BuilderSpec: QuickSpec {
             }
             
             it("retrieves the title when there is no notes") {
-                let content = load(.file("task-content-without-notes"))
+                let content = loadFixture(.file("task-content-without-notes"))
                 let result = Builder.task(from: content)
                 
                 expect(result.value?.title) == "This is a very important task to do"
@@ -49,7 +49,7 @@ enum Fixture {
     case file(String)
 }
 
-func load(_ fixture: Fixture) -> String {
+func loadFixture(_ fixture: Fixture) -> String {
     guard case let .file(name) = fixture else {
         fatalError("Invalid fixture \(fixture)!")
     }
