@@ -483,7 +483,7 @@
 					7A2690D31EA3E6AB00FEBBF8 = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = 8VS9JKFDZS;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 7A32BA5C1E9E5407005882A0;
 					};
@@ -495,6 +495,7 @@
 					7A32BA5C1E9E5407005882A0 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 8VS9JKFDZS;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -646,7 +647,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.BatmanTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Batman.app/Batman";
 			};
 			name = Debug;
@@ -665,7 +667,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.BatmanTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Batman.app/Batman";
 			};
 			name = Release;
@@ -804,7 +807,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.buddybuild.myApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -823,7 +827,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.buddybuild.myApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

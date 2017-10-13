@@ -15,7 +15,7 @@ final class TaskTextStorage: NSTextStorage {
         return backingStore.string
     }
     
-    override func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [String : Any] {
+    override func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [NSAttributedStringKey : Any] {
         return backingStore.attributes(at: location, effectiveRange: range)
     }
 
@@ -27,7 +27,7 @@ final class TaskTextStorage: NSTextStorage {
         endEditing()
     }
     
-    override func setAttributes(_ attrs: [String : Any]?, range: NSRange) {
+    override func setAttributes(_ attrs: [NSAttributedStringKey : Any]?, range: NSRange) {
         beginEditing()
         backingStore.setAttributes(attrs, range: range)
         edited(.editedAttributes, range: range, changeInLength: 0)
@@ -37,11 +37,11 @@ final class TaskTextStorage: NSTextStorage {
     override func processEditing() {
         let content = string as NSString
 
-        setAttributes([NSFontAttributeName: UIFont.btmTaskNotesFont()], range: NSMakeRange(0, content.length))
+        setAttributes([NSAttributedStringKey.font: UIFont.btmTaskNotesFont()], range: NSMakeRange(0, content.length))
         
         let range = NSMakeRange(0, content.length)
         content.enumerateSubstrings(in: range, options: .byLines) { (line, range, _, stop) in
-            self.setAttributes([NSFontAttributeName: UIFont.btmTaskNameFont()], range: range)
+            self.setAttributes([NSAttributedStringKey.font: UIFont.btmTaskNameFont()], range: range)
             stop.pointee = true
         }
 
