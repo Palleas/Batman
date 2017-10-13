@@ -1,4 +1,6 @@
 included:
   - Batman
   - BatmanTests
-  - ColorDump 
+  - ColorDump
+excluded:
+  - Batman/Vendor
