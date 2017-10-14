@@ -11,44 +11,44 @@ class ClientSpec: QuickSpec {
             afterEach {
                 OHHTTPStubs.removeAllStubs()
             }
-            
+
             let client = Client(token: Token(value: "invalid-token"))
-            
+
             it("handles Asana errors") {
                 stub(condition: isHost("app.asana.com"), response: { _ in
                     let response = ["errors": [
                         ["message": "Not Authorized"]
                     ]]
-                    
-                    return OHHTTPStubsResponse(data: try! JSONSerialization.data(withJSONObject: response, options: .prettyPrinted), statusCode: 401, headers: [:])
+
+                    return OHHTTPStubsResponse(data: try! JSONSerialization.data(withJSONObject: response, options: .prettyPrinted), statusCode: 401, headers: [:]) // swiftlint:disable:this force_try
                 })
-                
+
                 let result = client.projects().first()!
-                    
+
                 guard case let .failure(error) = result, case let .requestError(asanaErrors) = error else {
                     fail("Expected client to fail")
                     return
                 }
-                
+
                 expect(asanaErrors) == [AsanaError(message: "Not Authorized")]
             }
-            
+
             it("handles resources not found") {
                 stub(condition: isHost("app.asana.com"), response: { _ in
                     let response = ["errors": [
                         ["message": "Not Found"]
                     ]]
-                    
-                    return OHHTTPStubsResponse(data: try! JSONSerialization.data(withJSONObject: response, options: .prettyPrinted), statusCode: 404, headers: [:])
+
+                    return OHHTTPStubsResponse(data: try! JSONSerialization.data(withJSONObject: response, options: .prettyPrinted), statusCode: 404, headers: [:]) // swiftlint:disable:this force_try
                 })
 
                 let result = client.project(id: 18282).first()!
-                
+
                 guard case let .failure(error) = result else {
                     fail("Expected client to fail")
                     return
                 }
-                
+
                 expect(error) == Client.ClientError.doesNotExist
             }
         }

@@ -4,3 +4,13 @@ included:
   - ColorDump
 excluded:
   - Batman/Vendor
+disabled_rules:
+  - superfluous_disable_command
+  - line_length
+  - todo
+large_tuple:
+  warning: 4
+  error: 5
+identifier_name:
+  excluded:
+    - id

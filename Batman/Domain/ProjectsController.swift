@@ -4,23 +4,23 @@ import ReactiveSwift
 import Unbox
 
 final class ProjectsController {
-    
+
     enum ProjectsError: Error, AutoEquatable {
         case noCache
         case fetchingError(Client.ClientError)
     }
-    
+
     private let client: Client
-    
+
     let selectedProject = MutableProperty<Project?>(nil)
-    
+
     private let projectsPath: URL
 
     init(client: Client, cacheDirectory: URL) {
         self.client = client
         self.projectsPath = cacheDirectory.appendingPathComponent("projects.json")
     }
-    
+
     typealias Projects = SignalProducer<[Project], ProjectsError>
 
     func fetch() -> Projects {
@@ -32,14 +32,14 @@ final class ProjectsController {
             return self.fetchFromRemote()
         }
     }
-    
+
     func fetchFromCache() -> Projects {
         return SignalProducer<Data, ProjectsError> { sink, _ in
             guard FileManager.default.fileExists(atPath: self.projectsPath.path) else {
                 sink.send(error: .noCache)
                 return
             }
-            
+
             do {
                 // TODO: Expiration date
                 sink.send(value: try Data(contentsOf: self.projectsPath))
@@ -50,13 +50,13 @@ final class ProjectsController {
         }
             .attemptMap { return decodeArray(from: $0).mapError { _ in ProjectsError.noCache } }
     }
-    
+
     func fetchFromRemote() -> Projects {
         return self.client.projects()
             .mapError(ProjectsError.fetchingError)
             .flatMap(.latest, self.save)
     }
-    
+
     func save(projects: [Project]) -> SignalProducer<[Project], NoError> {
         return SignalProducer { sink, _ in
             defer {
@@ -64,7 +64,7 @@ final class ProjectsController {
                 sink.send(value: projects)
                 sink.sendCompleted()
             }
-            
+
             do {
                 let encoded = try projects.encode()
                 try encoded.write(to: self.projectsPath)
