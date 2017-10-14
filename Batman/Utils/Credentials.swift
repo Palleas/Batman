@@ -12,6 +12,6 @@ func keyOrProcessEnv(_ key: String) -> String {
     } else if let envKey = ProcessInfo.processInfo.environment[key] {
         return envKey
     }
-    
+
     fatalError("Key not found either in Buddybuild or in env: \(key)")
 }

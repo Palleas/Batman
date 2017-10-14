@@ -9,22 +9,22 @@ import UIKit
 
 extension UIFont {
 	class func btmProjectHeaderTitleFont() -> UIFont {
-		return UIFont.systemFont(ofSize: 60.0, weight: UIFontWeightUltraLight)
+		return UIFont.systemFont(ofSize: 60.0, weight: UIFont.Weight.ultraLight)
 	}
 
 	class func btmTaskNameFont() -> UIFont {
-		return UIFont.systemFont(ofSize: 40.0, weight: UIFontWeightBold)
+		return UIFont.systemFont(ofSize: 40.0, weight: UIFont.Weight.bold)
 	}
 
 	class func btmTaskNotesFont() -> UIFont {
-		return UIFont.systemFont(ofSize: 40.0, weight: UIFontWeightUltraLight)
+		return UIFont.systemFont(ofSize: 40.0, weight: UIFont.Weight.ultraLight)
 	}
 
 	class func btmProjectTitleFont() -> UIFont {
-		return UIFont.systemFont(ofSize: 20.0, weight: UIFontWeightLight)
+		return UIFont.systemFont(ofSize: 20.0, weight: UIFont.Weight.light)
 	}
 
 	class func btmActionButtonFont() -> UIFont {
-		return UIFont.systemFont(ofSize: 20.0, weight: UIFontWeightUltraLight)
+		return UIFont.systemFont(ofSize: 20.0, weight: UIFont.Weight.ultraLight)
 	}
 }

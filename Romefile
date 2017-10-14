@@ -1,0 +1,3 @@
+[Cache]
+  S3-Bucket = buddybuild-test-carthage-rome
+  local = ~/Library/Caches/Rome/

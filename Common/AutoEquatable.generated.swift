@@ -1,4 +1,4 @@
-// Generated using Sourcery 0.5.9 — https://github.com/krzysztofzablocki/Sourcery
+// Generated using Sourcery 0.8.0 — https://github.com/krzysztofzablocki/Sourcery
 // DO NOT EDIT
 
 // swiftlint:disable file_length
@@ -44,6 +44,8 @@ extension Builder.BuilderError: Equatable {}
 internal func == (lhs: Builder.BuilderError, rhs: Builder.BuilderError) -> Bool {
     switch (lhs, rhs) {
      case (.missingContent, .missingContent): 
+         return true 
+     case (.somethingElse, .somethingElse): 
          return true 
     default: return false
     }

@@ -10,12 +10,12 @@ import Foundation
 
 final class TaskTextStorage: NSTextStorage {
     private let backingStore = NSMutableAttributedString()
-    
+
     override var string: String {
         return backingStore.string
     }
-    
-    override func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [String : Any] {
+
+    override func attributes(at location: Int, effectiveRange range: NSRangePointer?) -> [NSAttributedStringKey: Any] {
         return backingStore.attributes(at: location, effectiveRange: range)
     }
 
@@ -26,22 +26,22 @@ final class TaskTextStorage: NSTextStorage {
         edited(.editedAttributes, range: range, changeInLength: length - beforeLength)
         endEditing()
     }
-    
-    override func setAttributes(_ attrs: [String : Any]?, range: NSRange) {
+
+    override func setAttributes(_ attrs: [NSAttributedStringKey: Any]?, range: NSRange) {
         beginEditing()
         backingStore.setAttributes(attrs, range: range)
         edited(.editedAttributes, range: range, changeInLength: 0)
         endEditing()
     }
-    
+
     override func processEditing() {
         let content = string as NSString
+        let range = NSRange(location: 0, length: content.length)
 
-        setAttributes([NSFontAttributeName: UIFont.btmTaskNotesFont()], range: NSMakeRange(0, content.length))
-        
-        let range = NSMakeRange(0, content.length)
-        content.enumerateSubstrings(in: range, options: .byLines) { (line, range, _, stop) in
-            self.setAttributes([NSFontAttributeName: UIFont.btmTaskNameFont()], range: range)
+        setAttributes([NSAttributedStringKey.font: UIFont.btmTaskNotesFont()], range: range)
+
+        content.enumerateSubstrings(in: range, options: .byLines) { (_, range, _, stop) in
+            self.setAttributes([NSAttributedStringKey.font: UIFont.btmTaskNameFont()], range: range)
             stop.pointee = true
         }
 
@@ -50,10 +50,10 @@ final class TaskTextStorage: NSTextStorage {
 }
 
 final class TaskTextView: UITextView {
-    
+
     init() {
         let textContainer = NSTextContainer()
-        
+
         let layoutManager = NSLayoutManager()
         layoutManager.addTextContainer(textContainer)
 
@@ -61,16 +61,16 @@ final class TaskTextView: UITextView {
         textStorage.addLayoutManager(layoutManager)
 
         super.init(frame: .zero, textContainer: textContainer)
-        
+
         textContainerInset = UIEdgeInsets(top: 32, left: 20, bottom: 20, right: 20)
         font = UIFont.btmTaskNameFont()
-        
+
         isUserInteractionEnabled = true
         alwaysBounceVertical = true
-        
+
         keyboardDismissMode = .onDrag
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

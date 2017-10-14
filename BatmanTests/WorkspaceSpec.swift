@@ -16,16 +16,16 @@ class WorkspaceSpec: QuickSpec {
     override func spec() {
         describe("Workspace") {
             let payload: [String: Any] = ["id": 1, "name": "Buddybuild", "is_organization": true]
-            let workspace: Workspace = try! unbox(dictionary: payload)
-            
+            let workspace: Workspace = try! unbox(dictionary: payload) // swiftlint:disable:this force_try
+
             it("has an id") {
                 expect(workspace.id) == 1
             }
-            
+
             it("has a name") {
                 expect(workspace.name) == "Buddybuild"
             }
-            
+
             it("can be an organization") {
                 expect(workspace.isOrganization).to(beTrue())
             }

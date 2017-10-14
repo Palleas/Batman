@@ -4,6 +4,7 @@ import Result
 struct Builder {
     enum BuilderError: Error, AutoEquatable {
         case missingContent
+        case somethingElse
     }
 
     typealias TitleAndNotes = (title: String, notes: String?)
@@ -17,9 +18,8 @@ struct Builder {
 
         guard !scanner.isAtEnd else { return .success((title: title as String, notes: nil) as TitleAndNotes) }
 
-        let notes = content
-            .substring(from: content.index(content.startIndex, offsetBy: scanner.scanLocation))
-            .trimmingCharacters(in: .whitespacesAndNewlines)
+        let index = content.index(content.startIndex, offsetBy: scanner.scanLocation)
+        let notes = content[index...].trimmingCharacters(in: .whitespacesAndNewlines)
 
         return .success((title: title as String, notes: notes) as TitleAndNotes)
     }
