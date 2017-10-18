@@ -15,6 +15,7 @@ dependencies:
 	$(BREW) update
 	$(BREW) install swiftgen
 	$(BREW) install blender/homebrew-tap/rome
+	$(BREW) install marathon-swift
 
 rebuild-assets:
 	$(SWIFTGEN) xcassets -t swift3 --param module=Batman -o Batman/Resources/Assets.swift Batman/Resources/Assets.xcassets
