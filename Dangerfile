@@ -5,6 +5,11 @@ swiftlint.directory = ENV['BUDDYBUILD_WORKSPACE']
 swiftlint.config_file = '.swiftlint.yml'
 swiftlint.lint_files
 
+OUTPUT = "/tmp/sandbox/#{ENV["BUDDYBUILD_BUILD_ID"]}/raw_xcodebuild_output.txt"
+FORMATTER = "bundle exec xcpretty-json-formatter"
+%x( cat "#{OUTPUT}" | XCPRETTY_JSON_FILE_OUTPUT=xcodebuild_output.json bundle exec xcpretty -f "#{FORMATTER}" )
+
+xcode_summary.project_root = ENV["BUDDYBUILD_HOME"]   xcode_summary.report 'xcodebuild_output.json'
 #xcov.report(
 #  scheme: ENV['BUDDYBUILD_SCHEME'],
 #  project: "#{ENV['BUDDYBUILD_WORKSPACE']}/Batman.xcodeproj",
