@@ -51,6 +51,11 @@ class ClientSpec: QuickSpec {
 
                 expect(error) == Client.ClientError.doesNotExist
             }
+
+            it("explodes") {
+                let b: Client! = nil
+                b.projects().startWithResult { _ in print("Sup?") }
+            }
         }
     }
 }
