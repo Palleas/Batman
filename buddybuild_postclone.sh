@@ -1,4 +1,7 @@
 #!/bin/bash
+
+ruby -v 
+
 AWS_FOLDER="$HOME/.aws"
 
 mkdir -p $AWS_FOLDER || true
