@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl -s https://codecov.io/bash | bash
