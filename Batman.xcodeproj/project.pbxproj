@@ -816,7 +816,7 @@
 				);
 				INFOPLIST_FILE = Batman/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.buddybuild.myApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.Batman";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -836,7 +836,7 @@
 				);
 				INFOPLIST_FILE = Batman/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.buddybuild.myApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perfectly-cooked.Batman";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;

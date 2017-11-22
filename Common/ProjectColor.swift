@@ -11,7 +11,7 @@ import Foundation
 
 extension Color {
     internal convenience init(hexColor: String) {
-        precondition(hexColor.characters.count == 6)
+        precondition(hexColor.count == 6)
         
         let scanner = Scanner(string: hexColor)
         var rgb: UInt32 = 0
