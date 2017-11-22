@@ -8,8 +8,6 @@ update: dependencies
 	$(ROME) upload --platform ios
 
 bootstrap: dependencies rebuild-assets
-	$(CARTHAGE) update --no-build --no-use-binaries --platform ios
-	$(ROME) download --platform ios
 
 dependencies:
 	$(BREW) update
