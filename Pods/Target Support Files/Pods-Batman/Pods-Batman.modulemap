@@ -1,0 +1,6 @@
+framework module Pods_Batman {
+  umbrella header "Pods-Batman-umbrella.h"
+
+  export *
+  module * { export * }
+}
