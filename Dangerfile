@@ -5,9 +5,9 @@ swiftlint.directory = ENV['BUDDYBUILD_WORKSPACE']
 swiftlint.config_file = '.swiftlint.yml'
 swiftlint.lint_files
 
-#xcov.report(
-#  scheme: ENV['BUDDYBUILD_SCHEME'],
-#  project: "#{ENV['BUDDYBUILD_WORKSPACE']}/Batman.xcodeproj",
-#  minimum_coverage_percentage: 30,
-#  derived_data_path: ENV['BUDDYBUILD_TEST_DIR'],
-#)
+xcov.report(
+  scheme: ENV['BUDDYBUILD_SCHEME'],
+  project: "#{ENV['BUDDYBUILD_WORKSPACE']}/Batman.xcodeproj",
+  minimum_coverage_percentage: 30,
+  derived_data_path: ENV['BUDDYBUILD_TEST_DIR'],
+)
